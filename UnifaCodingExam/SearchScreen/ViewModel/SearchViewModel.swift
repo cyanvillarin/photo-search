@@ -31,18 +31,37 @@ class SearchViewModel {
    public func fetchPhotosFromServer() {
       
       let session = URLSession.shared
-      guard let url = URL(string: apiEndpoint) else {
+      
+      var urlComponents = URLComponents(string: apiEndpoint)!
+      urlComponents.queryItems = [
+          URLQueryItem(name: "query", value: "pen"),
+      ]
+      
+      guard let url = urlComponents.url else {
          return
       }
       
       var request = URLRequest(url: url)
-      request.httpMethod = "POST"
+      request.httpMethod = "GET"
       request.setValue(apiKey, forHTTPHeaderField: "Authorization")
       
       let task = session.dataTask(with: request, completionHandler: { data, response, error in
-         print(data)
-         print(response)
-         print(error)
+         
+         if let error = error {
+            print("There is some error \(error.localizedDescription)")
+            return
+         }
+         
+         guard let data = data else {
+            print("There is no data")
+            return
+         }
+         
+         let decodedResult = try! JSONDecoder().decode(SearchApiResponse.self, from: data)
+         
+         print(decodedResult)
+         
+         
       })
       
       task.resume()

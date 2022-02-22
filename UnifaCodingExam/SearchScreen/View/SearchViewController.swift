@@ -12,8 +12,11 @@ class SearchViewController: UIViewController {
    @IBOutlet var searchBar: UISearchBar!
    @IBOutlet var tableView: UITableView!
    
+   var viewModel = SearchViewModel()
+   
    override func viewDidLoad() {
       super.viewDidLoad()
+      viewModel.fetchPhotosFromServer()
    }
 
 }
