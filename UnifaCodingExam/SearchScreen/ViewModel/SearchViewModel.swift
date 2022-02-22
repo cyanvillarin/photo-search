@@ -58,9 +58,7 @@ class SearchViewModel {
          }
          
          let decodedResult = try! JSONDecoder().decode(SearchApiResponse.self, from: data)
-         
-         print(decodedResult)
-         
+         self.photos.onNext(decodedResult.photos)
          
       })
       

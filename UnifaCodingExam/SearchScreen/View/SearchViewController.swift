@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
 
@@ -13,6 +15,7 @@ class SearchViewController: UIViewController {
    @IBOutlet var tableView: UITableView!
    
    var viewModel = SearchViewModel()
+   let disposeBag = DisposeBag()
    
    let cellID = "SearchTableViewCell"
    let cellHeight = 115.0
@@ -21,10 +24,36 @@ class SearchViewController: UIViewController {
       super.viewDidLoad()
       
       tableView.delegate = self
-      tableView.dataSource = self
+      
       tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
       
+      self.bindViewModel()
+      
       viewModel.fetchPhotosFromServer()
+   }
+   
+   public func bindViewModel() {
+      
+      /// bind the photos PublishSubject to tableView.rx.items
+      /// TableViewDataSource  is not needed anymore thanks to RxCocoa
+      viewModel.photos.bind(to: self.tableView.rx.items(cellIdentifier: cellID, cellType: SearchTableViewCell.self)) { (row, photo, cell) in
+         
+         DispatchQueue.main.async {
+            cell.setup(photo: photo)
+         }
+         
+      }.disposed(by: disposeBag)
+      
+      
+      /// TableViewDelegate  is also not needed anymore thanks to RxCocoa
+      self.tableView.rx.itemSelected
+         .subscribe(onNext: { [weak self] indexPath in
+            let cell = self?.tableView.cellForRow(at: indexPath) as! SearchTableViewCell
+            
+            // transition to detail screen
+            
+         }).disposed(by: disposeBag)
+      
    }
 
 }

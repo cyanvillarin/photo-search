@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class SearchTableViewCell: UITableViewCell {
    
@@ -19,6 +20,14 @@ class SearchTableViewCell: UITableViewCell {
    
    override func setSelected(_ selected: Bool, animated: Bool) {
       super.setSelected(selected, animated: animated)
+   }
+   
+   func setup(photo: Photo) {
+      if let url = URL(string: photo.src.small) {
+         itemImageView.sd_setImage(with: url, completed: nil)
+      }
+      itemDescription.text = photo.alt
+      itemPhotographer.text = photo.photographer
    }
    
 }
