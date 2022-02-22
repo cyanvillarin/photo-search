@@ -1,0 +1,786 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26EFB2611EC40FDD496AB1CD /* Pods_UnifaCodingExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881FC94DAEB800686FC21B6 /* Pods_UnifaCodingExam.framework */; };
+		3264EFC4EAF0C286A82B7875 /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84787CA4E965D7D91D98F9BE /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework */; };
+		877675B127C4B1AB00011859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B027C4B1AB00011859 /* AppDelegate.swift */; };
+		877675B327C4B1AB00011859 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B227C4B1AB00011859 /* SceneDelegate.swift */; };
+		877675B527C4B1AB00011859 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B427C4B1AB00011859 /* ViewController.swift */; };
+		877675B827C4B1AB00011859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877675B627C4B1AB00011859 /* Main.storyboard */; };
+		877675BA27C4B1AD00011859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877675B927C4B1AD00011859 /* Assets.xcassets */; };
+		877675BD27C4B1AD00011859 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877675BB27C4B1AD00011859 /* LaunchScreen.storyboard */; };
+		877675C827C4B1AE00011859 /* UnifaCodingExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675C727C4B1AE00011859 /* UnifaCodingExamTests.swift */; };
+		877675D227C4B1AE00011859 /* UnifaCodingExamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675D127C4B1AE00011859 /* UnifaCodingExamUITests.swift */; };
+		877675D427C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */; };
+		E29ADB1183316C3BF26EA38D /* Pods_UnifaCodingExamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		877675C427C4B1AE00011859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 877675A527C4B1AB00011859 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 877675AC27C4B1AB00011859;
+			remoteInfo = UnifaCodingExam;
+		};
+		877675CE27C4B1AE00011859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 877675A527C4B1AB00011859 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 877675AC27C4B1AB00011859;
+			remoteInfo = UnifaCodingExam;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5E4626AE22511E9F0ABEADB8 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam-UnifaCodingExamUITests.debug.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		618925709FDB91EDB4164959 /* Pods-UnifaCodingExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam.release.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam.release.xcconfig"; sourceTree = "<group>"; };
+		7054FF7E76A95640E8CFB9F4 /* Pods-UnifaCodingExamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExamTests.debug.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExamTests/Pods-UnifaCodingExamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		759B003A774314F1250BE576 /* Pods-UnifaCodingExamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExamTests.release.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExamTests/Pods-UnifaCodingExamTests.release.xcconfig"; sourceTree = "<group>"; };
+		7881FC94DAEB800686FC21B6 /* Pods_UnifaCodingExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnifaCodingExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnifaCodingExamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84787CA4E965D7D91D98F9BE /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnifaCodingExam_UnifaCodingExamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		877675AD27C4B1AB00011859 /* UnifaCodingExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnifaCodingExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		877675B027C4B1AB00011859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		877675B227C4B1AB00011859 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		877675B427C4B1AB00011859 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		877675B727C4B1AB00011859 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		877675B927C4B1AD00011859 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		877675BC27C4B1AD00011859 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		877675BE27C4B1AD00011859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		877675C327C4B1AE00011859 /* UnifaCodingExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnifaCodingExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		877675C727C4B1AE00011859 /* UnifaCodingExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamTests.swift; sourceTree = "<group>"; };
+		877675CD27C4B1AE00011859 /* UnifaCodingExamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnifaCodingExamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		877675D127C4B1AE00011859 /* UnifaCodingExamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamUITests.swift; sourceTree = "<group>"; };
+		877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A3B7ECCBFD31B60D59777061 /* Pods-UnifaCodingExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam.debug.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam.debug.xcconfig"; sourceTree = "<group>"; };
+		AC98F0EA0F255C451D273B76 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		877675AA27C4B1AB00011859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26EFB2611EC40FDD496AB1CD /* Pods_UnifaCodingExam.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877675C027C4B1AE00011859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E29ADB1183316C3BF26EA38D /* Pods_UnifaCodingExamTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877675CA27C4B1AE00011859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3264EFC4EAF0C286A82B7875 /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16B0103BB3BED5A730EBECD7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3B7ECCBFD31B60D59777061 /* Pods-UnifaCodingExam.debug.xcconfig */,
+				618925709FDB91EDB4164959 /* Pods-UnifaCodingExam.release.xcconfig */,
+				5E4626AE22511E9F0ABEADB8 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.debug.xcconfig */,
+				AC98F0EA0F255C451D273B76 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig */,
+				7054FF7E76A95640E8CFB9F4 /* Pods-UnifaCodingExamTests.debug.xcconfig */,
+				759B003A774314F1250BE576 /* Pods-UnifaCodingExamTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7994B88E5F0EE17EDD2226DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7881FC94DAEB800686FC21B6 /* Pods_UnifaCodingExam.framework */,
+				84787CA4E965D7D91D98F9BE /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework */,
+				78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		877675A427C4B1AB00011859 = {
+			isa = PBXGroup;
+			children = (
+				877675AF27C4B1AB00011859 /* UnifaCodingExam */,
+				877675C627C4B1AE00011859 /* UnifaCodingExamTests */,
+				877675D027C4B1AE00011859 /* UnifaCodingExamUITests */,
+				877675AE27C4B1AB00011859 /* Products */,
+				16B0103BB3BED5A730EBECD7 /* Pods */,
+				7994B88E5F0EE17EDD2226DD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		877675AE27C4B1AB00011859 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				877675AD27C4B1AB00011859 /* UnifaCodingExam.app */,
+				877675C327C4B1AE00011859 /* UnifaCodingExamTests.xctest */,
+				877675CD27C4B1AE00011859 /* UnifaCodingExamUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		877675AF27C4B1AB00011859 /* UnifaCodingExam */ = {
+			isa = PBXGroup;
+			children = (
+				877675B027C4B1AB00011859 /* AppDelegate.swift */,
+				877675B227C4B1AB00011859 /* SceneDelegate.swift */,
+				877675B427C4B1AB00011859 /* ViewController.swift */,
+				877675B627C4B1AB00011859 /* Main.storyboard */,
+				877675B927C4B1AD00011859 /* Assets.xcassets */,
+				877675BB27C4B1AD00011859 /* LaunchScreen.storyboard */,
+				877675BE27C4B1AD00011859 /* Info.plist */,
+			);
+			path = UnifaCodingExam;
+			sourceTree = "<group>";
+		};
+		877675C627C4B1AE00011859 /* UnifaCodingExamTests */ = {
+			isa = PBXGroup;
+			children = (
+				877675C727C4B1AE00011859 /* UnifaCodingExamTests.swift */,
+			);
+			path = UnifaCodingExamTests;
+			sourceTree = "<group>";
+		};
+		877675D027C4B1AE00011859 /* UnifaCodingExamUITests */ = {
+			isa = PBXGroup;
+			children = (
+				877675D127C4B1AE00011859 /* UnifaCodingExamUITests.swift */,
+				877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */,
+			);
+			path = UnifaCodingExamUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		877675AC27C4B1AB00011859 /* UnifaCodingExam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 877675D727C4B1AE00011859 /* Build configuration list for PBXNativeTarget "UnifaCodingExam" */;
+			buildPhases = (
+				64C62FA44C40A2A76384943C /* [CP] Check Pods Manifest.lock */,
+				877675A927C4B1AB00011859 /* Sources */,
+				877675AA27C4B1AB00011859 /* Frameworks */,
+				877675AB27C4B1AB00011859 /* Resources */,
+				2DB255183429BA6D771AEE92 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnifaCodingExam;
+			productName = UnifaCodingExam;
+			productReference = 877675AD27C4B1AB00011859 /* UnifaCodingExam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		877675C227C4B1AE00011859 /* UnifaCodingExamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 877675DA27C4B1AE00011859 /* Build configuration list for PBXNativeTarget "UnifaCodingExamTests" */;
+			buildPhases = (
+				A1138420F497CB7D5487E54F /* [CP] Check Pods Manifest.lock */,
+				877675BF27C4B1AE00011859 /* Sources */,
+				877675C027C4B1AE00011859 /* Frameworks */,
+				877675C127C4B1AE00011859 /* Resources */,
+				098806BB5298C26C8DB3E92B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				877675C527C4B1AE00011859 /* PBXTargetDependency */,
+			);
+			name = UnifaCodingExamTests;
+			productName = UnifaCodingExamTests;
+			productReference = 877675C327C4B1AE00011859 /* UnifaCodingExamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		877675CC27C4B1AE00011859 /* UnifaCodingExamUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 877675DD27C4B1AE00011859 /* Build configuration list for PBXNativeTarget "UnifaCodingExamUITests" */;
+			buildPhases = (
+				58E3DD36A6B7EBE550E81D75 /* [CP] Check Pods Manifest.lock */,
+				877675C927C4B1AE00011859 /* Sources */,
+				877675CA27C4B1AE00011859 /* Frameworks */,
+				877675CB27C4B1AE00011859 /* Resources */,
+				6363066B7F40F62FE8282E0F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				877675CF27C4B1AE00011859 /* PBXTargetDependency */,
+			);
+			name = UnifaCodingExamUITests;
+			productName = UnifaCodingExamUITests;
+			productReference = 877675CD27C4B1AE00011859 /* UnifaCodingExamUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		877675A527C4B1AB00011859 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					877675AC27C4B1AB00011859 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					877675C227C4B1AE00011859 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 877675AC27C4B1AB00011859;
+					};
+					877675CC27C4B1AE00011859 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 877675AC27C4B1AB00011859;
+					};
+				};
+			};
+			buildConfigurationList = 877675A827C4B1AB00011859 /* Build configuration list for PBXProject "UnifaCodingExam" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 877675A427C4B1AB00011859;
+			productRefGroup = 877675AE27C4B1AB00011859 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				877675AC27C4B1AB00011859 /* UnifaCodingExam */,
+				877675C227C4B1AE00011859 /* UnifaCodingExamTests */,
+				877675CC27C4B1AE00011859 /* UnifaCodingExamUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		877675AB27C4B1AB00011859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877675BD27C4B1AD00011859 /* LaunchScreen.storyboard in Resources */,
+				877675BA27C4B1AD00011859 /* Assets.xcassets in Resources */,
+				877675B827C4B1AB00011859 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877675C127C4B1AE00011859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877675CB27C4B1AE00011859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		098806BB5298C26C8DB3E92B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExamTests/Pods-UnifaCodingExamTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExamTests/Pods-UnifaCodingExamTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExamTests/Pods-UnifaCodingExamTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DB255183429BA6D771AEE92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58E3DD36A6B7EBE550E81D75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnifaCodingExam-UnifaCodingExamUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6363066B7F40F62FE8282E0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64C62FA44C40A2A76384943C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnifaCodingExam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1138420F497CB7D5487E54F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnifaCodingExamTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		877675A927C4B1AB00011859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877675B527C4B1AB00011859 /* ViewController.swift in Sources */,
+				877675B127C4B1AB00011859 /* AppDelegate.swift in Sources */,
+				877675B327C4B1AB00011859 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877675BF27C4B1AE00011859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877675C827C4B1AE00011859 /* UnifaCodingExamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877675C927C4B1AE00011859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				877675D227C4B1AE00011859 /* UnifaCodingExamUITests.swift in Sources */,
+				877675D427C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		877675C527C4B1AE00011859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 877675AC27C4B1AB00011859 /* UnifaCodingExam */;
+			targetProxy = 877675C427C4B1AE00011859 /* PBXContainerItemProxy */;
+		};
+		877675CF27C4B1AE00011859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 877675AC27C4B1AB00011859 /* UnifaCodingExam */;
+			targetProxy = 877675CE27C4B1AE00011859 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		877675B627C4B1AB00011859 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				877675B727C4B1AB00011859 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		877675BB27C4B1AD00011859 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				877675BC27C4B1AD00011859 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		877675D527C4B1AE00011859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		877675D627C4B1AE00011859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		877675D827C4B1AE00011859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3B7ECCBFD31B60D59777061 /* Pods-UnifaCodingExam.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUJKC4DH23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UnifaCodingExam/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		877675D927C4B1AE00011859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618925709FDB91EDB4164959 /* Pods-UnifaCodingExam.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUJKC4DH23;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UnifaCodingExam/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		877675DB27C4B1AE00011859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7054FF7E76A95640E8CFB9F4 /* Pods-UnifaCodingExamTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUJKC4DH23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnifaCodingExam.app/UnifaCodingExam";
+			};
+			name = Debug;
+		};
+		877675DC27C4B1AE00011859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 759B003A774314F1250BE576 /* Pods-UnifaCodingExamTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUJKC4DH23;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnifaCodingExam.app/UnifaCodingExam";
+			};
+			name = Release;
+		};
+		877675DE27C4B1AE00011859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E4626AE22511E9F0ABEADB8 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUJKC4DH23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UnifaCodingExam;
+			};
+			name = Debug;
+		};
+		877675DF27C4B1AE00011859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC98F0EA0F255C451D273B76 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZUJKC4DH23;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExamUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UnifaCodingExam;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		877675A827C4B1AB00011859 /* Build configuration list for PBXProject "UnifaCodingExam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				877675D527C4B1AE00011859 /* Debug */,
+				877675D627C4B1AE00011859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		877675D727C4B1AE00011859 /* Build configuration list for PBXNativeTarget "UnifaCodingExam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				877675D827C4B1AE00011859 /* Debug */,
+				877675D927C4B1AE00011859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		877675DA27C4B1AE00011859 /* Build configuration list for PBXNativeTarget "UnifaCodingExamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				877675DB27C4B1AE00011859 /* Debug */,
+				877675DC27C4B1AE00011859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		877675DD27C4B1AE00011859 /* Build configuration list for PBXNativeTarget "UnifaCodingExamUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				877675DE27C4B1AE00011859 /* Debug */,
+				877675DF27C4B1AE00011859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 877675A527C4B1AB00011859 /* Project object */;
+}
