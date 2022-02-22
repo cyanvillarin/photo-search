@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class SearchViewModel {
+   
+   public var photos: PublishSubject<[Photo]> = PublishSubject()
    
    private var apiEndpoint = "https://api.pexels.com/v1/search"
    
@@ -32,7 +35,11 @@ class SearchViewModel {
          return
       }
       
-      let task = session.dataTask(with: url, completionHandler: { data, response, error in
+      var request = URLRequest(url: url)
+      request.httpMethod = "POST"
+      request.setValue(apiKey, forHTTPHeaderField: "Authorization")
+      
+      let task = session.dataTask(with: request, completionHandler: { data, response, error in
          print(data)
          print(response)
          print(error)

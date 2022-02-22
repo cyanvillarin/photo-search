@@ -10,12 +10,18 @@ import XCTest
 
 class SearchViewModelTests: XCTestCase {
    
+   var sut = SearchViewModel()
+   
    override class func setUp() {
       super.setUp()
    }
    
    override class func tearDown() {
       super.tearDown()
+   }
+   
+   func test_fetchPhotosFromServer() {
+      
    }
    
 }

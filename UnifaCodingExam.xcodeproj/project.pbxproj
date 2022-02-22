@@ -13,6 +13,7 @@
 		8770459A27C4B56700717C0C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770459927C4B56700717C0C /* SearchViewModel.swift */; };
 		8770459C27C4C64500717C0C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8770459B27C4C64500717C0C /* Keys.plist */; };
 		8770459E27C4C8C200717C0C /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770459D27C4C8C200717C0C /* DetailViewModelTests.swift */; };
+		877045A027C4F0F300717C0C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770459F27C4F0F300717C0C /* Photo.swift */; };
 		877675B127C4B1AB00011859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B027C4B1AB00011859 /* AppDelegate.swift */; };
 		877675B327C4B1AB00011859 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B227C4B1AB00011859 /* SceneDelegate.swift */; };
 		877675B527C4B1AB00011859 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B427C4B1AB00011859 /* SearchViewController.swift */; };
@@ -54,6 +55,7 @@
 		8770459927C4B56700717C0C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8770459B27C4C64500717C0C /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		8770459D27C4C8C200717C0C /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		8770459F27C4F0F300717C0C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		877675AD27C4B1AB00011859 /* UnifaCodingExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnifaCodingExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		877675B027C4B1AB00011859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		877675B227C4B1AB00011859 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		8770459327C4B52D00717C0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8770459F27C4F0F300717C0C /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				877045A027C4F0F300717C0C /* Photo.swift in Sources */,
 				877675B527C4B1AB00011859 /* SearchViewController.swift in Sources */,
 				8770459A27C4B56700717C0C /* SearchViewModel.swift in Sources */,
 				877675B127C4B1AB00011859 /* AppDelegate.swift in Sources */,
@@ -701,7 +705,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyanvillarin.UnifaCodingExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -732,7 +736,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.inspiralists.UnifaCodingExam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyanvillarin.UnifaCodingExam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
