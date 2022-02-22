@@ -11,13 +11,15 @@
 		3264EFC4EAF0C286A82B7875 /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84787CA4E965D7D91D98F9BE /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework */; };
 		8770459027C4B38300717C0C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770458F27C4B38300717C0C /* DetailViewController.swift */; };
 		8770459A27C4B56700717C0C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770459927C4B56700717C0C /* SearchViewModel.swift */; };
+		8770459C27C4C64500717C0C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8770459B27C4C64500717C0C /* Keys.plist */; };
+		8770459E27C4C8C200717C0C /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770459D27C4C8C200717C0C /* DetailViewModelTests.swift */; };
 		877675B127C4B1AB00011859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B027C4B1AB00011859 /* AppDelegate.swift */; };
 		877675B327C4B1AB00011859 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B227C4B1AB00011859 /* SceneDelegate.swift */; };
 		877675B527C4B1AB00011859 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675B427C4B1AB00011859 /* SearchViewController.swift */; };
 		877675B827C4B1AB00011859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877675B627C4B1AB00011859 /* Main.storyboard */; };
 		877675BA27C4B1AD00011859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877675B927C4B1AD00011859 /* Assets.xcassets */; };
 		877675BD27C4B1AD00011859 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877675BB27C4B1AD00011859 /* LaunchScreen.storyboard */; };
-		877675C827C4B1AE00011859 /* UnifaCodingExamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675C727C4B1AE00011859 /* UnifaCodingExamTests.swift */; };
+		877675C827C4B1AE00011859 /* SearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675C727C4B1AE00011859 /* SearchViewModelTests.swift */; };
 		877675D227C4B1AE00011859 /* UnifaCodingExamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675D127C4B1AE00011859 /* UnifaCodingExamUITests.swift */; };
 		877675D427C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */; };
 		E29ADB1183316C3BF26EA38D /* Pods_UnifaCodingExamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */; };
@@ -50,6 +52,8 @@
 		84787CA4E965D7D91D98F9BE /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnifaCodingExam_UnifaCodingExamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8770458F27C4B38300717C0C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8770459927C4B56700717C0C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		8770459B27C4C64500717C0C /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		8770459D27C4C8C200717C0C /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
 		877675AD27C4B1AB00011859 /* UnifaCodingExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnifaCodingExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		877675B027C4B1AB00011859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		877675B227C4B1AB00011859 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +63,7 @@
 		877675BC27C4B1AD00011859 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877675BE27C4B1AD00011859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		877675C327C4B1AE00011859 /* UnifaCodingExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnifaCodingExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		877675C727C4B1AE00011859 /* UnifaCodingExamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamTests.swift; sourceTree = "<group>"; };
+		877675C727C4B1AE00011859 /* SearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTests.swift; sourceTree = "<group>"; };
 		877675CD27C4B1AE00011859 /* UnifaCodingExamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnifaCodingExamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		877675D127C4B1AE00011859 /* UnifaCodingExamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamUITests.swift; sourceTree = "<group>"; };
 		877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				877675B927C4B1AD00011859 /* Assets.xcassets */,
 				877675BB27C4B1AD00011859 /* LaunchScreen.storyboard */,
 				877675BE27C4B1AD00011859 /* Info.plist */,
+				8770459B27C4C64500717C0C /* Keys.plist */,
 			);
 			path = UnifaCodingExam;
 			sourceTree = "<group>";
@@ -223,7 +228,8 @@
 		877675C627C4B1AE00011859 /* UnifaCodingExamTests */ = {
 			isa = PBXGroup;
 			children = (
-				877675C727C4B1AE00011859 /* UnifaCodingExamTests.swift */,
+				877675C727C4B1AE00011859 /* SearchViewModelTests.swift */,
+				8770459D27C4C8C200717C0C /* DetailViewModelTests.swift */,
 			);
 			path = UnifaCodingExamTests;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8770459C27C4C64500717C0C /* Keys.plist in Resources */,
 				877675BD27C4B1AD00011859 /* LaunchScreen.storyboard in Resources */,
 				877675BA27C4B1AD00011859 /* Assets.xcassets in Resources */,
 				877675B827C4B1AB00011859 /* Main.storyboard in Resources */,
@@ -506,7 +513,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				877675C827C4B1AE00011859 /* UnifaCodingExamTests.swift in Sources */,
+				877675C827C4B1AE00011859 /* SearchViewModelTests.swift in Sources */,
+				8770459E27C4C8C200717C0C /* DetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
