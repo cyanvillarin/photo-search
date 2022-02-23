@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Search API Response's Source Structure
 struct Source: Decodable {
    var original: String
    var large2x: String

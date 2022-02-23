@@ -15,7 +15,7 @@ import RxCocoa
 class SearchViewModelTests: XCTestCase {
    
    var viewModel: SearchViewModel!  /// system under test
-   var apiService: MockApiService!
+   var apiService: ApiService! = MockApiService()
    var disposeBag: DisposeBag!
    var testScheduler: TestScheduler! /// main element of RxTests
    
@@ -54,6 +54,8 @@ class SearchViewModelTests: XCTestCase {
    
 }
 
+/// This will be the mock data to be used for Unit Testing
+/// Subclass of ApiService, and just overrides the fetchPhotos function
 class MockApiService: ApiService {
    override func fetchPhotos(queryKeyword: String) async throws -> [Photo] {
       let mockPhotos = [

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Search API Response's Photo Structure
 struct Photo: Decodable {
    var id: Int
    var width: Int

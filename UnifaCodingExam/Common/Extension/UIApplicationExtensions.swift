@@ -10,6 +10,9 @@ import UIKit
 
 extension UIApplication {
    
+   /// This function retrieves the top view controller
+   /// - Parameter controller: the controller which you want to know which top view controller it has
+   /// - Returns: the top view controller
    class func topViewController(controller: UIViewController? = UIApplication
                                  .shared
                                  .connectedScenes

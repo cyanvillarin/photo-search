@@ -11,10 +11,10 @@ import NVActivityIndicatorView
 
 class LoadingView: UIView {
    
+   // MARK: - Variables
    private var contentBlurredEffectView = UIVisualEffectView()
    private var activityIndicator = NVActivityIndicatorView(frame: CGRect.zero)
    private var blurEffect = UIBlurEffect(style: .light)
-   
    public class var sharedInstance: LoadingView {
       struct Singleton {
          static let instance = LoadingView(frame: CGRect.zero)
@@ -22,6 +22,8 @@ class LoadingView: UIView {
       return Singleton.instance
    }
    
+   // MARK: - Public Methods
+   /// - Parameter frame: frame we want to display the LoadingView
    public override init(frame: CGRect) {
       
       super.init(frame: frame)
@@ -36,12 +38,7 @@ class LoadingView: UIView {
       let statusBarYOrigin = -1 * statusBarHeight
       
       contentBlurredEffectView.effect = blurEffect
-      contentBlurredEffectView.frame = CGRect(x: 0,
-                                              y: statusBarYOrigin,
-                                              width: UIScreen.main.bounds.width,
-                                              height: UIScreen.main.bounds.height
-                                              + statusBarHeight)
-      
+      contentBlurredEffectView.frame = CGRect(x: 0, y: statusBarYOrigin, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height + statusBarHeight)
       activityIndicator.frame.size = CGSize(width: 70, height: 70)
       activityIndicator.color = UIColor(hexString: "4DB5B8")
       activityIndicator.type = NVActivityIndicatorType.ballClipRotatePulse
@@ -51,41 +48,37 @@ class LoadingView: UIView {
       addSubview(activityIndicator)
    }
    
+   /// Deserialize your object here
    required public init?(coder aDecoder: NSCoder) {
       fatalError("Not coder compliant")
    }
    
+   /// Shows the LoadingView
    public class func show() {
       let loadingView = LoadingView.sharedInstance
-      
       UIView.animate(withDuration: 0.20, delay: 0.0, options: .curveEaseOut, animations: {
-         
          loadingView.contentBlurredEffectView.contentView.alpha = 1
          loadingView.activityIndicator.alpha = 1
          loadingView.contentBlurredEffectView.effect = loadingView.blurEffect
-         
          if let topController = UIApplication.topViewController() {
             loadingView.activityIndicator.center = topController.view.center
             topController.navigationController?.view.addSubview(loadingView)
          }
-         
       }, completion: nil)
-      
    }
    
+   /// Hides the LoadingView
    public class func hide() {
       let loadingView = LoadingView.sharedInstance
-      
       UIView.animate(withDuration: 0.33, delay: 0.0, options: .curveEaseOut, animations: {
-         
          loadingView.contentBlurredEffectView.contentView.alpha = 0
          loadingView.activityIndicator.alpha = 0
          loadingView.contentBlurredEffectView.effect = nil
-         
       }, completion: {_ in
          loadingView.removeFromSuperview()
       })
    }
+   
 }
 
 

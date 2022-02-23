@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Custom errors that is used all throughout the app
 enum CustomError: Error {
    case failedToCreateUrlComponents
    case failedToGetUrl

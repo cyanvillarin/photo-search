@@ -10,11 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
    
+   // MARK: - Variables
    var photo: Photo!
    @IBOutlet var itemImageView: UIImageView!
    @IBOutlet var itemDescriptionLabel: UILabel!
    @IBOutlet var itemPhotographerLabel: UILabel!
    
+   // MARK: - Life Cycle Methods
    override func viewDidLoad() {
       super.viewDidLoad()
 

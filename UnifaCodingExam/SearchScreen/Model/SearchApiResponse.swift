@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Search API Response Structure
+/// The keys that will be used from the response, are the same as the variable name
 struct SearchApiResponse: Decodable {
    var total_results: Int
    var page: Int
