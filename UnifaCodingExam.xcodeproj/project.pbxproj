@@ -29,6 +29,7 @@
 		877675D427C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */; };
 		87767A3E27C5C96D00C6EDFA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A3D27C5C96D00C6EDFA /* ApiService.swift */; };
 		87767A4127C5FDAF00C6EDFA /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */; };
+		87767A4327C6055F00C6EDFA /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4227C6055F00C6EDFA /* CustomErrors.swift */; };
 		E29ADB1183316C3BF26EA38D /* Pods_UnifaCodingExamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		87767A3D27C5C96D00C6EDFA /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		87767A4227C6055F00C6EDFA /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		A3B7ECCBFD31B60D59777061 /* Pods-UnifaCodingExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam.debug.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam.debug.xcconfig"; sourceTree = "<group>"; };
 		AC98F0EA0F255C451D273B76 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,9 +151,7 @@
 		8770459227C4B51E00717C0C /* DetailScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8770459627C4B53D00717C0C /* Model */,
 				8770459727C4B54300717C0C /* View */,
-				8770459827C4B54A00717C0C /* ViewModel */,
 			);
 			path = DetailScreen;
 			sourceTree = "<group>";
@@ -184,26 +184,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		8770459627C4B53D00717C0C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		8770459727C4B54300717C0C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				8770458F27C4B38300717C0C /* DetailViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		8770459827C4B54A00717C0C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		877675A427C4B1AB00011859 = {
@@ -268,6 +254,7 @@
 			children = (
 				87767A3F27C5FD8F00C6EDFA /* Extension */,
 				87767A3D27C5C96D00C6EDFA /* ApiService.swift */,
+				87767A4227C6055F00C6EDFA /* CustomErrors.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -540,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877045A727C4FA9000717C0C /* SearchTableViewCell.swift in Sources */,
+				87767A4327C6055F00C6EDFA /* CustomErrors.swift in Sources */,
 				877045A427C4F77800717C0C /* Source.swift in Sources */,
 				877045A027C4F0F300717C0C /* Photo.swift in Sources */,
 				877675B527C4B1AB00011859 /* SearchViewController.swift in Sources */,

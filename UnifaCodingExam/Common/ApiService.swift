@@ -29,23 +29,12 @@ class ApiService {
    // MARK: - Public Functions
    /// fetches the photos from the API
    /// will be used by the View Models
-   public func fetchPhotos(queryKeyword: String) async -> [Photo] {
-      await withCheckedContinuation { continuation in
-         fetchPhotos(queryKeyword: queryKeyword) { photos in
-            continuation.resume(returning: photos)
-         }
-      }
-   }
-   
-   // MARK: - Private Functions
-   /// fetches the photos objects from the API
-   /// will not be used by the View Models
-   private func fetchPhotos(queryKeyword: String, completion: @escaping ([Photo]) -> Void ) {
+   public func fetchPhotos(queryKeyword: String) async throws -> [Photo] {
       
       let session = URLSession.shared
       
       guard var urlComponents = URLComponents(string: Endpoint.search) else {
-         return
+         throw CustomError.failedToCreateUrlComponents
       }
       
       urlComponents.queryItems = [
@@ -53,38 +42,39 @@ class ApiService {
       ]
       
       guard let url = urlComponents.url else {
-         return
+         throw CustomError.failedToGetUrl
       }
       
       var request = URLRequest(url: url)
       request.httpMethod = "GET"
       request.setValue(apiKey, forHTTPHeaderField: "Authorization")
       
-      let task = session.dataTask(with: request, completionHandler: { data, response, error in
+      return try await withCheckedThrowingContinuation { continuation in
          
-         if let error = error {
-            print("There is some error \(error.localizedDescription)")
-            return
-         }
+         let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            if let error = error {
+               continuation.resume(throwing: error)
+               return
+            }
+            
+            guard let data = data else {
+               continuation.resume(throwing: CustomError.failedToGetData)
+               return
+            }
+            
+            do {
+               let decodedResult = try JSONDecoder().decode(SearchApiResponse.self, from: data)
+               continuation.resume(returning: decodedResult.photos)
+            } catch {
+               continuation.resume(throwing: error)
+            }
+            
+         })
          
-         guard let data = data else {
-            print("There is no data")
-            return
-         }
+         task.resume()
          
-         do {
-            let decodedResult = try JSONDecoder().decode(SearchApiResponse.self, from: data)
-            completion(decodedResult.photos)
-         } catch {
-            return
-         }
-         
-      })
-      
-      task.resume()
+      }
       
    }
-   
-   
    
 }

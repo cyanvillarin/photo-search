@@ -55,7 +55,7 @@ class SearchViewModelTests: XCTestCase {
 }
 
 class MockApiService: ApiService {
-   override func fetchPhotos(queryKeyword: String) async -> [Photo] {
+   override func fetchPhotos(queryKeyword: String) async throws -> [Photo] {
       let mockPhotos = [
          Photo(id: 1,
                width: 3066,

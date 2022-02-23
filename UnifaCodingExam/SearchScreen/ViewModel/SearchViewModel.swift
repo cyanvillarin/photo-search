@@ -20,14 +20,14 @@ class SearchViewModel {
    }
    
    func fetchPhotos(queryKeyword: String) {
-      
       Task.init {
-         let retrievedPhotos = await self.apiService.fetchPhotos(queryKeyword: queryKeyword)
-         self.photos.onNext(retrievedPhotos)
+         do {
+            let retrievedPhotos = try await self.apiService.fetchPhotos(queryKeyword: queryKeyword)
+            self.photos.onNext(retrievedPhotos)
+         } catch {
+            print("error \(error.localizedDescription)")
+         }
       }
-
    }
-   
-   
    
 }
