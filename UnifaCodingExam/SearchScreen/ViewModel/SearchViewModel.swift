@@ -49,6 +49,8 @@ class SearchViewModel {
             /// fetch photos from API, it has await, so it will wait until this function is finished executing before proceeding to the next step
             let response = try await self.apiService.fetchPhotos(queryKeyword: queryKeyword)
             
+            print(response)
+            
             /// set values for the shouldShowNoResultsView, and the shouldShowLoadingView
             shouldShowNoResultsView.onNext(false)
             shouldShowLoadingView.onNext(false)
@@ -63,6 +65,15 @@ class SearchViewModel {
             /// reset the page number
             pageNumber = 1
             currentPageNumber.onNext(pageNumber)
+            
+            /// in case there is no photos returned
+            if response.photos.count == 0 {
+               
+               print("no photos found")
+               
+               /// show the No Results View
+               shouldShowNoResultsView.onNext(true)
+            }
             
          } catch {
             

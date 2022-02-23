@@ -82,7 +82,7 @@ class SearchViewController: UIViewController {
    private func setupUI() {
       noResultsFoundView.isHidden = true
       searchBar.delegate = self
-      searchBar.placeholder = "Please search here"
+      searchBar.placeholder = "Please search here :)"
       tableView.delegate = self
       tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
       tableView.separatorStyle = .none
@@ -128,7 +128,7 @@ class SearchViewController: UIViewController {
       /// bind the shouldShowNoResultsView to show the noResultsFoundView while calling the API
       viewModel.shouldShowNoResultsView.subscribe(onNext: { (shouldShowNoResultsView) in
          DispatchQueue.main.async {
-            print(shouldShowNoResultsView)
+            print("shouldShowNoResultsView \(shouldShowNoResultsView)")
             if shouldShowNoResultsView {
                self.noResultsFoundView.isHidden = false
             } else {
