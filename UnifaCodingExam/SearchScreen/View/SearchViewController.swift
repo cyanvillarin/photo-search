@@ -168,10 +168,23 @@ extension SearchViewController: UISearchBarDelegate {
    
    /// this method performs another API call
    @objc func reload(_ searchBar: UISearchBar) {
+      
+      /// do not search if there is no input in the search bar, or if it is a whitespace
       guard let queryKeyword = searchBar.text, queryKeyword.trimmingCharacters(in: .whitespaces) != "" else {
          print("nothing to search")
          return
       }
+      
+      /// hide the keyboard
+      view.endEditing(true)
+      
+      /// scroll to top if needed
+      if self.tableView.numberOfRows(inSection: 0) != 0 {
+         let topRow = IndexPath(row: 0, section: 0)
+         self.tableView.scrollToRow(at: topRow, at: .top, animated: true)
+      }
+      
+      /// fetch photos with the new keyword
       viewModel.fetchPhotos(queryKeyword: queryKeyword)
    }
 }

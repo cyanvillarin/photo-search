@@ -117,12 +117,39 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7y3-1f-U8T">
                                 <rect key="frame" x="10" y="54" width="394" height="798"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This photo is a Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ca-0RJ">
-                                <rect key="frame" x="30" y="768.5" width="354" height="38.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQl-gK-9wI">
+                                <rect key="frame" x="26" y="70" width="362" height="40.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ca-0RJ">
+                                <rect key="frame" x="30" y="74" width="354" height="32.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="This photo is a Lorem Ipsum is simply dummy text of the printing and typesetting industry.">
+                                        <attributes>
+                                            <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bO-vW-TLR">
+                                <rect key="frame" x="26" y="811" width="362" height="25"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by: Hiroto Shimizu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFV-vr-koU">
                                 <rect key="frame" x="30" y="815" width="354" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -137,8 +164,16 @@
                             <constraint firstItem="sFV-vr-koU" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="30" id="E7P-R0-qlV"/>
                             <constraint firstItem="5Ia-D5-YKl" firstAttribute="trailing" secondItem="7y3-1f-U8T" secondAttribute="trailing" constant="10" id="IMK-rV-JXK"/>
                             <constraint firstItem="jZO-ca-0RJ" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="30" id="Jfe-sb-NIs"/>
+                            <constraint firstItem="sFV-vr-koU" firstAttribute="leading" secondItem="4bO-vW-TLR" secondAttribute="leading" constant="4" id="Ki7-cB-VHk"/>
+                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="leading" secondItem="QQl-gK-9wI" secondAttribute="leading" constant="4" id="QYm-lR-x7e"/>
+                            <constraint firstItem="sFV-vr-koU" firstAttribute="top" secondItem="4bO-vW-TLR" secondAttribute="top" constant="4" id="Qw0-P3-dXJ"/>
+                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="top" secondItem="QQl-gK-9wI" secondAttribute="top" constant="4" id="R9R-aP-9lm"/>
+                            <constraint firstItem="sFV-vr-koU" firstAttribute="trailing" secondItem="4bO-vW-TLR" secondAttribute="trailing" constant="-4" id="RAf-eB-h2a"/>
+                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="top" secondItem="5Ia-D5-YKl" secondAttribute="top" constant="30" id="W0h-hM-Slh"/>
                             <constraint firstItem="7y3-1f-U8T" firstAttribute="top" secondItem="5Ia-D5-YKl" secondAttribute="top" constant="10" id="WyP-77-yjO"/>
-                            <constraint firstItem="sFV-vr-koU" firstAttribute="top" secondItem="jZO-ca-0RJ" secondAttribute="bottom" constant="8" id="dBe-jh-AB0"/>
+                            <constraint firstItem="sFV-vr-koU" firstAttribute="bottom" secondItem="4bO-vW-TLR" secondAttribute="bottom" constant="-4" id="duA-uo-efE"/>
+                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="trailing" secondItem="QQl-gK-9wI" secondAttribute="trailing" constant="-4" id="dwB-8a-kRf"/>
+                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="bottom" secondItem="QQl-gK-9wI" secondAttribute="bottom" constant="-4" id="gmh-Vm-q74"/>
                             <constraint firstItem="5Ia-D5-YKl" firstAttribute="bottom" secondItem="7y3-1f-U8T" secondAttribute="bottom" constant="10" id="mq9-CK-bSu"/>
                             <constraint firstItem="5Ia-D5-YKl" firstAttribute="trailing" secondItem="sFV-vr-koU" secondAttribute="trailing" constant="30" id="o21-X7-kMe"/>
                             <constraint firstItem="7y3-1f-U8T" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="10" id="q1i-bS-VcU"/>

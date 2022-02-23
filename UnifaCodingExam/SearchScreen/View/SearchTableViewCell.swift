@@ -33,12 +33,18 @@ class SearchTableViewCell: UITableViewCell {
       
       /// add a placeholder color
       let averageColor = photo.avg_color.replacingOccurrences(of: "#", with: "")
-      itemImageView.backgroundColor = UIColor(hexString: averageColor)
       
+      /// configure description
+      itemDescription.text = photo.alt
+      itemDescription.textColor = UIColor(hexString: averageColor)
+      
+      /// configure image
+      itemImageView.backgroundColor = UIColor(hexString: averageColor)
       if let url = URL(string: photo.src.small) {
          itemImageView.sd_setImage(with: url, completed: nil)
       }
-      itemDescription.text = photo.alt
+      
+      /// configure photographer
       itemPhotographer.text = photo.photographer
    }
    

@@ -18,25 +18,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="401" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_image" translatesAutoresizingMaskIntoConstraints="NO" id="YKJ-qQ-SWL">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YKJ-qQ-SWL">
                         <rect key="frame" x="20" y="17.5" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="CUF-6K-KYP"/>
                             <constraint firstAttribute="height" constant="80" id="FJ9-SM-Gv6"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person Holding A Fountain Pen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dl-sd-B5V">
-                        <rect key="frame" x="116" y="36" width="269" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dl-sd-B5V">
+                        <rect key="frame" x="116" y="36.5" width="269" height="16.5"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="p2w-2r-zhm"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Person Holding A Fountain Pen">
+                                <attributes>
+                                    <color key="NSColor" red="0.21034562506643281" green="0.13922108760496385" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="14" name="Helvetica-Bold"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="撮影者：Alex Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-20-HmL">
-                        <rect key="frame" x="116" y="58" width="119" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="116" y="56" width="110.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -52,7 +58,7 @@
                 <constraints>
                     <constraint firstItem="YKJ-qQ-SWL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="1xL-6P-Xbn"/>
                     <constraint firstItem="zQI-o5-mUR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="EyQ-g6-kDj"/>
-                    <constraint firstItem="Qh9-20-HmL" firstAttribute="top" secondItem="9dl-sd-B5V" secondAttribute="bottom" constant="5" id="VFQ-4b-xDs"/>
+                    <constraint firstItem="Qh9-20-HmL" firstAttribute="top" secondItem="9dl-sd-B5V" secondAttribute="bottom" constant="3" id="VFQ-4b-xDs"/>
                     <constraint firstItem="Qh9-20-HmL" firstAttribute="leading" secondItem="9dl-sd-B5V" secondAttribute="leading" id="eDz-QS-yn8"/>
                     <constraint firstAttribute="trailing" secondItem="9dl-sd-B5V" secondAttribute="trailing" constant="16" id="gxu-8C-L25"/>
                     <constraint firstAttribute="bottom" secondItem="zQI-o5-mUR" secondAttribute="bottom" id="kZ3-zh-wLg"/>
@@ -72,7 +78,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="placeholder_image" width="256" height="256"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
