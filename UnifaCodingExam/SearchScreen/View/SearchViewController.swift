@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
    
    // MARK: - Variables
    @IBOutlet var searchBar: UISearchBar!
+   @IBOutlet var currentPageLabel: UILabel!
    @IBOutlet var tableView: UITableView!
    @IBOutlet var noResultsFoundView: UIView!
    
@@ -133,6 +134,38 @@ class SearchViewController: UIViewController {
             } else {
                self.noResultsFoundView.isHidden = true
             }
+         }
+      }).disposed(by: disposeBag)
+      
+      /// observer for shouldScrollToTop
+      viewModel.shouldScrollToTop.subscribe(onNext: { (shouldScrollToTop) in
+         DispatchQueue.main.async {
+            /// scroll to top if needed
+            if shouldScrollToTop {
+               if self.tableView.numberOfRows(inSection: 0) != 0 {
+                  let topRow = IndexPath(row: 0, section: 0)
+                  self.tableView.scrollToRow(at: topRow, at: .top, animated: false)
+               }
+            }
+         }
+      }).disposed(by: disposeBag)
+      
+      /// observer for shouldScrollToBottom
+      viewModel.shouldScrollToBottom.subscribe(onNext: { (shouldScrollToBottom) in
+         DispatchQueue.main.async {
+            /// scroll to bottom if needed
+            if shouldScrollToBottom {
+               let y = self.tableView.contentSize.height - self.tableView.frame.size.height
+               if y < 0 { return }
+               self.tableView.setContentOffset(CGPoint(x: 0, y: y), animated: false)
+            }
+         }
+      }).disposed(by: disposeBag)
+      
+      /// observer for currentPageNumber
+      viewModel.currentPageNumber.subscribe(onNext: { (pageNumber) in
+         DispatchQueue.main.async {
+            self.currentPageLabel.text = "Current Page: \(pageNumber)"
          }
       }).disposed(by: disposeBag)
       

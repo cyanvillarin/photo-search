@@ -33,8 +33,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTC-pw-Xhy">
+                                <rect key="frame" x="0.0" y="139" width="414" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Page: 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA7-j8-cSM">
+                                        <rect key="frame" x="15" y="8.5" width="81" height="13.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="GA7-j8-cSM" firstAttribute="centerY" secondItem="CTC-pw-Xhy" secondAttribute="centerY" id="IuZ-rx-DdB"/>
+                                    <constraint firstAttribute="height" constant="30" id="YjK-rG-zGF"/>
+                                    <constraint firstItem="GA7-j8-cSM" firstAttribute="leading" secondItem="CTC-pw-Xhy" secondAttribute="leading" constant="15" id="h1U-K1-vIF"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XoM-kQ-L6D">
-                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <rect key="frame" x="0.0" y="169" width="414" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mV3-zv-PCU">
@@ -82,21 +99,25 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="mV3-zv-PCU" firstAttribute="top" secondItem="Sac-JS-ald" secondAttribute="bottom" id="0L4-7Q-Iiq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CTC-pw-Xhy" secondAttribute="trailing" id="5XF-mj-4Ba"/>
                             <constraint firstItem="mV3-zv-PCU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7L5-jh-xLa"/>
-                            <constraint firstItem="XoM-kQ-L6D" firstAttribute="top" secondItem="Sac-JS-ald" secondAttribute="bottom" id="Cyo-t5-lfi"/>
+                            <constraint firstItem="XoM-kQ-L6D" firstAttribute="top" secondItem="CTC-pw-Xhy" secondAttribute="bottom" id="9Hv-6m-NYh"/>
                             <constraint firstItem="Sac-JS-ald" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EBM-kQ-Ssv"/>
                             <constraint firstItem="mV3-zv-PCU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="InM-r3-CyK"/>
+                            <constraint firstItem="CTC-pw-Xhy" firstAttribute="top" secondItem="Sac-JS-ald" secondAttribute="bottom" id="J4I-LK-n2V"/>
                             <constraint firstItem="XoM-kQ-L6D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UAs-Gz-VE3"/>
                             <constraint firstItem="Sac-JS-ald" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dWu-b7-Uao"/>
                             <constraint firstItem="mV3-zv-PCU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="f9H-0J-Azm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XoM-kQ-L6D" secondAttribute="bottom" id="lNM-ps-DYW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XoM-kQ-L6D" secondAttribute="trailing" id="rds-mV-rDg"/>
-                            <constraint firstItem="mV3-zv-PCU" firstAttribute="top" secondItem="Sac-JS-ald" secondAttribute="bottom" id="sEF-WB-uA1"/>
+                            <constraint firstItem="CTC-pw-Xhy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tUT-du-sKq"/>
                             <constraint firstItem="Sac-JS-ald" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z0C-VB-06r"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ルックミー検索" id="MDB-8m-Y4b"/>
                     <connections>
+                        <outlet property="currentPageLabel" destination="GA7-j8-cSM" id="hzA-4I-K40"/>
                         <outlet property="noResultsFoundView" destination="mV3-zv-PCU" id="qQJ-ji-Eac"/>
                         <outlet property="searchBar" destination="Sac-JS-ald" id="tUt-wK-ipw"/>
                         <outlet property="tableView" destination="XoM-kQ-L6D" id="C0x-TB-0F4"/>

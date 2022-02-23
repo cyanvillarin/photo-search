@@ -20,6 +20,12 @@ class SearchViewModel {
    public var photos: PublishSubject<[Photo]> = PublishSubject()
    public var shouldShowLoadingView: PublishSubject<Bool> = PublishSubject()
    public var shouldShowNoResultsView: PublishSubject<Bool> = PublishSubject()
+   
+   public var shouldScrollToTop: PublishSubject<Bool> = PublishSubject()
+   public var shouldScrollToBottom: PublishSubject<Bool> = PublishSubject()
+   public var currentPageNumber: PublishSubject<Int> = PublishSubject()
+   
+   var pageNumber = 1
    var prevPageURL: String?
    var nextPageURL: String?
    
@@ -54,13 +60,18 @@ class SearchViewModel {
             self.prevPageURL = response.prev_page
             self.nextPageURL = response.next_page
             
+            /// reset the page number
+            pageNumber = 1
+            currentPageNumber.onNext(pageNumber)
+            
          } catch {
             
             /// in case something wrong happens, resets the value of the Observable into empty array
             self.photos.onNext([])
             
-            /// set the next page to nil
+            /// set the next and prev page to nil
             self.nextPageURL = nil
+            self.prevPageURL = nil
             
             /// hide the LoadingView
             shouldShowLoadingView.onNext(false)
@@ -81,8 +92,8 @@ class SearchViewModel {
       Task.init {
          do {
             
-            print("nextPage: \(self.nextPageURL)")
-            print("prevPage: \(self.prevPageURL)")
+            print("nextPage: \(String(describing: self.nextPageURL))")
+            print("prevPage: \(String(describing: self.prevPageURL))")
             
             /// check and assign the paginationURL
             var paginationURL: String
@@ -100,6 +111,16 @@ class SearchViewModel {
             
             /// fetch next photos from API
             let response = try await self.apiService.fetchNextOrPrevPhotos(paginationURL: paginationURL)
+            
+            /// scroll to top or bottom after retrieving data from API
+            if paginationType == .next {
+               shouldScrollToTop.onNext(true)
+               pageNumber = pageNumber + 1
+            } else {  /// prev
+               shouldScrollToBottom.onNext(true)
+               pageNumber = pageNumber - 1
+            }
+            currentPageNumber.onNext(pageNumber)
             
             /// update photos
             self.photos.onNext(response.photos)
