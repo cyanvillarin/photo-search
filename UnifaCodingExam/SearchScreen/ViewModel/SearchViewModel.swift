@@ -34,14 +34,14 @@ class SearchViewModel {
             shouldShowLoadingView.onNext(true)
             
             /// fetch photos from API, it has await, so it will wait until this function is finished executing before proceeding to the next step
-            let retrievedPhotos = try await self.apiService.fetchPhotos(queryKeyword: queryKeyword)
+            let response = try await self.apiService.fetchPhotos(queryKeyword: queryKeyword)
             
             /// set values for the shouldShowNoResultsView, and the shouldShowLoadingView
             shouldShowNoResultsView.onNext(false)
             shouldShowLoadingView.onNext(false)
             
             /// after retrieving the data, update the Observable property, so it will trigger the UI update from the View
-            self.photos.onNext(retrievedPhotos)
+            self.photos.onNext(response.photos)
             
          } catch {
             

@@ -57,7 +57,7 @@ class SearchViewModelTests: XCTestCase {
 /// This will be the mock data to be used for Unit Testing
 /// Subclass of ApiService, and just overrides the fetchPhotos function
 class MockApiService: ApiService {
-   override func fetchPhotos(queryKeyword: String) async throws -> [Photo] {
+   override func fetchPhotos(queryKeyword: String) async throws -> PhotosApiResponse {
       let mockPhotos = [
          Photo(id: 1,
                width: 3066,
@@ -115,12 +115,12 @@ class MockApiService: ApiService {
                alt: "Mock Photo 3")
       ]
       
-      let mockResponse = SearchApiResponse(total_results: 10000,
+      let mockResponse = PhotosApiResponse(total_results: 10000,
                                            page: 1,
                                            per_page: 1,
                                            photos: mockPhotos,
                                            next_page: "https://api.pexels.com/v1/search/?page=2&per_page=1&query=nature")
       
-      return mockResponse.photos
+      return mockResponse
    }
 }

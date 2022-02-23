@@ -31,7 +31,7 @@ class ApiService {
    /// fetches the photos from the API
    /// will be used by the View Models
    /// using the newly released async/await functions
-   public func fetchPhotos(queryKeyword: String) async throws -> [Photo] {
+   public func fetchPhotos(queryKeyword: String) async throws -> PhotosApiResponse {
       
       /// check if we could get the URLComponents
       guard var urlComponents = URLComponents(string: Endpoint.search) else {
@@ -75,8 +75,8 @@ class ApiService {
             
             /// decode the data into JSON
             do {
-               let decodedResult = try JSONDecoder().decode(SearchApiResponse.self, from: data)
-               continuation.resume(returning: decodedResult.photos)
+               let decodedResult = try JSONDecoder().decode(PhotosApiResponse.self, from: data)
+               continuation.resume(returning: decodedResult)
             } catch {
                continuation.resume(throwing: error)
             }
