@@ -188,3 +188,21 @@ extension SearchViewController: UISearchBarDelegate {
       viewModel.fetchPhotos(queryKeyword: queryKeyword)
    }
 }
+
+extension SearchViewController: UIScrollViewDelegate {
+   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+      
+      /// if the user scrolls to the top
+      if (tableView.contentOffset.y < 0) {
+         print("im scrolling to the top")
+         viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
+      }
+      
+      /// if the user scrolls to the bottom
+      if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height) {
+         print("im scrolling to the bottom")
+         viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
+      }
+      
+   }
+}

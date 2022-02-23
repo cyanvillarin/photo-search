@@ -9,12 +9,19 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+enum PaginationType {
+   case next
+   case prev
+}
+
 class SearchViewModel {
    
    // MARK: - Variables
    public var photos: PublishSubject<[Photo]> = PublishSubject()
    public var shouldShowLoadingView: PublishSubject<Bool> = PublishSubject()
    public var shouldShowNoResultsView: PublishSubject<Bool> = PublishSubject()
+   var prevPageURL: String?
+   var nextPageURL: String?
    
    /// Use of dependency injection, so we can use a mock Api while Unit Testing
    var apiService: ApiService!
@@ -43,10 +50,17 @@ class SearchViewModel {
             /// after retrieving the data, update the Observable property, so it will trigger the UI update from the View
             self.photos.onNext(response.photos)
             
+            /// set the next page and prev page  (if available)
+            self.prevPageURL = response.prev_page
+            self.nextPageURL = response.next_page
+            
          } catch {
             
             /// in case something wrong happens, resets the value of the Observable into empty array
             self.photos.onNext([])
+            
+            /// set the next page to nil
+            self.nextPageURL = nil
             
             /// hide the LoadingView
             shouldShowLoadingView.onNext(false)
@@ -59,6 +73,47 @@ class SearchViewModel {
             
          }
       }
+   }
+   
+   /// This method is called if the user scrolls to the bottom of the table view
+   func fetchMorePhotosIfNeeded(paginationType: PaginationType) {
+   
+      Task.init {
+         do {
+            
+            print("nextPage: \(self.nextPageURL)")
+            print("prevPage: \(self.prevPageURL)")
+            
+            /// check and assign the paginationURL
+            var paginationURL: String
+            if paginationType == .next {
+               guard let nextPage = self.nextPageURL else {
+                  return
+               }
+               paginationURL = nextPage
+            } else { /// prev
+               guard let prevPage = self.prevPageURL else {
+                  return
+               }
+               paginationURL = prevPage
+            }
+            
+            /// fetch next photos from API
+            let response = try await self.apiService.fetchNextOrPrevPhotos(paginationURL: paginationURL)
+            
+            /// update photos
+            self.photos.onNext(response.photos)
+            
+            /// set the next page and prev page  (if available)
+            self.prevPageURL = response.prev_page
+            self.nextPageURL = response.next_page
+            
+         } catch {
+            /// print the error
+            print("error \(error.localizedDescription)")
+         }
+      }
+      
    }
    
 }

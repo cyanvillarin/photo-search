@@ -119,7 +119,8 @@ class MockApiService: ApiService {
                                            page: 1,
                                            per_page: 1,
                                            photos: mockPhotos,
-                                           next_page: "https://api.pexels.com/v1/search/?page=2&per_page=1&query=nature")
+                                           next_page: "https://api.pexels.com/v1/search/?page=2&per_page=1&query=nature",
+                                           prev_page: "https://api.pexels.com/v1/search/?page=2&per_page=1&query=nature")
       
       return mockResponse
    }

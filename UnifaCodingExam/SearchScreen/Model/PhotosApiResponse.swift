@@ -14,5 +14,6 @@ struct PhotosApiResponse: Decodable {
    var page: Int
    var per_page: Int
    var photos: [Photo]
-   var next_page: String
+   var next_page: String?
+   var prev_page: String?
 }
