@@ -30,6 +30,8 @@
 		87767A3E27C5C96D00C6EDFA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A3D27C5C96D00C6EDFA /* ApiService.swift */; };
 		87767A4127C5FDAF00C6EDFA /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */; };
 		87767A4327C6055F00C6EDFA /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4227C6055F00C6EDFA /* CustomErrors.swift */; };
+		87767A4627C60BEA00C6EDFA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4527C60BEA00C6EDFA /* LoadingView.swift */; };
+		87767A4827C60C2C00C6EDFA /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4727C60C2C00C6EDFA /* UIApplicationExtensions.swift */; };
 		E29ADB1183316C3BF26EA38D /* Pods_UnifaCodingExamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		87767A3D27C5C96D00C6EDFA /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		87767A4227C6055F00C6EDFA /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
+		87767A4527C60BEA00C6EDFA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		87767A4727C60C2C00C6EDFA /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
 		A3B7ECCBFD31B60D59777061 /* Pods-UnifaCodingExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam.debug.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam.debug.xcconfig"; sourceTree = "<group>"; };
 		AC98F0EA0F255C451D273B76 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -252,6 +256,7 @@
 		87767A3B27C5C93200C6EDFA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				87767A4427C60BE000C6EDFA /* Views */,
 				87767A3F27C5FD8F00C6EDFA /* Extension */,
 				87767A3D27C5C96D00C6EDFA /* ApiService.swift */,
 				87767A4227C6055F00C6EDFA /* CustomErrors.swift */,
@@ -263,8 +268,17 @@
 			isa = PBXGroup;
 			children = (
 				87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */,
+				87767A4727C60C2C00C6EDFA /* UIApplicationExtensions.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		87767A4427C60BE000C6EDFA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87767A4527C60BEA00C6EDFA /* LoadingView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +542,7 @@
 			files = (
 				877045A727C4FA9000717C0C /* SearchTableViewCell.swift in Sources */,
 				87767A4327C6055F00C6EDFA /* CustomErrors.swift in Sources */,
+				87767A4827C60C2C00C6EDFA /* UIApplicationExtensions.swift in Sources */,
 				877045A427C4F77800717C0C /* Source.swift in Sources */,
 				877045A027C4F0F300717C0C /* Photo.swift in Sources */,
 				877675B527C4B1AB00011859 /* SearchViewController.swift in Sources */,
@@ -537,6 +552,7 @@
 				87767A3E27C5C96D00C6EDFA /* ApiService.swift in Sources */,
 				877675B327C4B1AB00011859 /* SceneDelegate.swift in Sources */,
 				877045A227C4F66C00717C0C /* SearchApiResponse.swift in Sources */,
+				87767A4627C60BEA00C6EDFA /* LoadingView.swift in Sources */,
 				8770459027C4B38300717C0C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

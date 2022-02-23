@@ -1,4 +1,7 @@
 PODS:
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - RxBlocking (6.2.0):
     - RxSwift (= 6.2.0)
   - RxCocoa (6.2.0):
@@ -14,6 +17,7 @@ PODS:
   - SDWebImage/Core (5.12.3)
 
 DEPENDENCIES:
+  - NVActivityIndicatorView
   - RxBlocking
   - RxCocoa
   - RxSwift
@@ -22,6 +26,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - NVActivityIndicatorView
     - RxBlocking
     - RxCocoa
     - RxRelay
@@ -30,6 +35,7 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   RxBlocking: 0b29f7d2079109a8de49c411381bed7c33ef1eeb
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
@@ -37,6 +43,6 @@ SPEC CHECKSUMS:
   RxTest: 0c692fa672b694373ba86d2b00033595297a2831
   SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
 
-PODFILE CHECKSUM: 63bc70aec2bc2c2807346b6c0353b2ea4a4e8031
+PODFILE CHECKSUM: 73e018c7f12767c121767e3f468bc8304fbc0bbe
 
 COCOAPODS: 1.11.2

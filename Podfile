@@ -9,6 +9,7 @@ target 'UnifaCodingExam' do
   pod 'SDWebImage'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'NVActivityIndicatorView'
 
   target 'UnifaCodingExamTests' do
     inherit! :search_paths

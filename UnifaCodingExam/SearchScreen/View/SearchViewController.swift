@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 class SearchViewController: UIViewController {
-
+   
    @IBOutlet var searchBar: UISearchBar!
    @IBOutlet var tableView: UITableView!
    
@@ -52,7 +52,7 @@ class SearchViewController: UIViewController {
       navigationItem.titleView = imageView
       
       searchBar.delegate = self
-      searchBar.placeholder = "Kindergarten"
+      searchBar.placeholder = "Please search here"
       
       tableView.delegate = self
       tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
@@ -63,11 +63,8 @@ class SearchViewController: UIViewController {
       viewModel.fetchPhotos(queryKeyword: "Kindergarten")
    }
    
-   
-   //Calls this function when the tap is recognized.
    @objc func dismissKeyboard() {
-       //Causes the view (or one of its embedded text fields) to resign the first responder status.
-       view.endEditing(true)
+      view.endEditing(true)
    }
    
    public func bindViewModel() {
@@ -75,12 +72,10 @@ class SearchViewController: UIViewController {
       /// bind the photos PublishSubject to tableView.rx.items
       /// TableViewDataSource  is not needed anymore thanks to RxCocoa
       viewModel.photos.bind(to: self.tableView.rx.items(cellIdentifier: cellID, cellType: SearchTableViewCell.self)) { (row, photo, cell) in
-         
          DispatchQueue.main.async {
             cell.setup(photo: photo)
             cell.selectionStyle = .none
          }
-         
       }.disposed(by: disposeBag)
       
       /// TableViewDelegate's didSelectRowAt is also not needed anymore thanks to RxCocoa
@@ -91,6 +86,18 @@ class SearchViewController: UIViewController {
                self?.transitionToDetailView(photo: cellPhoto)
             }
          }).disposed(by: disposeBag)
+      
+      /// bind the isLoading to show the LoadingView while calling the API
+      viewModel.isLoading.subscribe(onNext: { (isLoading) in
+         DispatchQueue.main.async {
+            print(isLoading)
+            if isLoading {
+               LoadingView.show()
+            } else {
+               LoadingView.hide()
+            }
+         }
+      }).disposed(by: disposeBag)
    }
    
    /// Moves to the Details screen
@@ -103,7 +110,7 @@ class SearchViewController: UIViewController {
          }
       }
    }
-
+   
 }
 
 extension SearchViewController: UITableViewDelegate {

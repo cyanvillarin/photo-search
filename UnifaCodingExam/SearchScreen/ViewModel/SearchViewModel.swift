@@ -12,6 +12,7 @@ import RxCocoa
 class SearchViewModel {
    
    public var photos: PublishSubject<[Photo]> = PublishSubject()
+   public var isLoading: PublishSubject<Bool> = PublishSubject()
    
    var apiService: ApiService!
    
@@ -22,9 +23,12 @@ class SearchViewModel {
    func fetchPhotos(queryKeyword: String) {
       Task.init {
          do {
+            isLoading.onNext(true)
             let retrievedPhotos = try await self.apiService.fetchPhotos(queryKeyword: queryKeyword)
+            isLoading.onNext(false)
             self.photos.onNext(retrievedPhotos)
          } catch {
+            isLoading.onNext(false)
             print("error \(error.localizedDescription)")
          }
       }
