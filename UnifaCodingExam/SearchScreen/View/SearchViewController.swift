@@ -26,6 +26,7 @@ class SearchViewController: UIViewController {
       tableView.delegate = self
       
       tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
+      tableView.separatorStyle = .none
       
       self.bindViewModel()
       
@@ -40,41 +41,36 @@ class SearchViewController: UIViewController {
          
          DispatchQueue.main.async {
             cell.setup(photo: photo)
+            cell.selectionStyle = .none
          }
          
       }.disposed(by: disposeBag)
       
-      
-      /// TableViewDelegate  is also not needed anymore thanks to RxCocoa
+      /// TableViewDelegate's didSelectRowAt is also not needed anymore thanks to RxCocoa
       self.tableView.rx.itemSelected
          .subscribe(onNext: { [weak self] indexPath in
             let cell = self?.tableView.cellForRow(at: indexPath) as! SearchTableViewCell
-            
-            // transition to detail screen
-            
+            if let cellPhoto = cell.photo {
+               self?.transitionToDetailView(photo: cellPhoto)
+            }
          }).disposed(by: disposeBag)
-      
-   }
-
-}
-
-extension SearchViewController: UITableViewDataSource {
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! SearchTableViewCell
-      return cell
    }
    
-   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return 10
+   /// Moves to the Details screen
+   /// - Parameter recipe: Recipe object
+   private func transitionToDetailView(photo: Photo) {
+      if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+         detailVC.photo = photo
+         if let navigator = self.navigationController {
+            navigator.pushViewController(detailVC, animated: true)
+         }
+      }
    }
+
 }
 
 extension SearchViewController: UITableViewDelegate {
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       return cellHeight
-   }
-   
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      print(indexPath.row)
    }
 }

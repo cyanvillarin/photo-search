@@ -10,12 +10,15 @@ import SDWebImage
 
 class SearchTableViewCell: UITableViewCell {
    
+   var photo: Photo!
    @IBOutlet var itemImageView: UIImageView!
    @IBOutlet var itemDescription: UILabel!
    @IBOutlet var itemPhotographer: UILabel!
    
    override func awakeFromNib() {
       super.awakeFromNib()
+      itemImageView.layer.masksToBounds = true
+      itemImageView.layer.cornerRadius = 8.0
    }
    
    override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,6 +26,7 @@ class SearchTableViewCell: UITableViewCell {
    }
    
    func setup(photo: Photo) {
+      self.photo = photo
       if let url = URL(string: photo.src.small) {
          itemImageView.sd_setImage(with: url, completed: nil)
       }

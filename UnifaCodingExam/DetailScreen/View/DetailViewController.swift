@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
    
+   var photo: Photo!
    @IBOutlet var itemImageView: UIImageView!
    @IBOutlet var itemDescriptionLabel: UILabel!
    @IBOutlet var itemPhotographerLabel: UILabel!
