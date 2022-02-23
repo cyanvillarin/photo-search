@@ -30,6 +30,11 @@ class SearchTableViewCell: UITableViewCell {
    // MARK: - Public Methods
    public func setup(photo: Photo) {
       self.photo = photo
+      
+      /// add a placeholder color
+      let averageColor = photo.avg_color.replacingOccurrences(of: "#", with: "")
+      itemImageView.backgroundColor = UIColor(hexString: averageColor)
+      
       if let url = URL(string: photo.src.small) {
          itemImageView.sd_setImage(with: url, completed: nil)
       }

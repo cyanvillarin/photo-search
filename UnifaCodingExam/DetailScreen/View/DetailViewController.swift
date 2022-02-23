@@ -23,7 +23,10 @@ class DetailViewController: UIViewController {
       self.title = nil
       itemImageView.layer.masksToBounds = true
       itemImageView.layer.cornerRadius = 8.0
-      itemImageView.backgroundColor = UIColor(hexString: "CAD5E2")
+      
+      /// add a placeholder color
+      let averageColor = photo.avg_color.replacingOccurrences(of: "#", with: "")
+      itemImageView.backgroundColor = UIColor(hexString: averageColor)
       
       if let url = URL(string: photo.src.large) {
          itemImageView.sd_setImage(with: url, completed: nil)
