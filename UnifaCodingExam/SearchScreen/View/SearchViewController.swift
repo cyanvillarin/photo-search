@@ -23,13 +23,51 @@ class SearchViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      if let navigationController = navigationController {
+         /// Fix Nav Bar tint issue in iOS 15.0 or later - is transparent w/o code below
+         if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+            appearance.backgroundColor = UIColor.clear
+            navigationController.navigationBar.standardAppearance = appearance
+            navigationController.navigationBar.scrollEdgeAppearance = appearance
+            
+         } else {
+            navigationController.navigationBar.barTintColor = UIColor.clear
+         }
+      }
+      
+      //Looks for single or multiple taps.
+      let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+      
+      //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+      tap.cancelsTouchesInView = false
+      
+      view.addGestureRecognizer(tap)
+      
+      let image = UIImage(named: "navbar_logo")
+      let imageView = UIImageView(image: image)
+      imageView.contentMode = .scaleAspectFit
+      navigationItem.titleView = imageView
+      
       searchBar.delegate = self
+      searchBar.placeholder = "Kindergarten"
       
       tableView.delegate = self
       tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
       tableView.separatorStyle = .none
       
       self.bindViewModel()
+      
+      viewModel.fetchPhotos(queryKeyword: "Kindergarten")
+   }
+   
+   
+   //Calls this function when the tap is recognized.
+   @objc func dismissKeyboard() {
+       //Causes the view (or one of its embedded text fields) to resign the first responder status.
+       view.endEditing(true)
    }
    
    public func bindViewModel() {
@@ -77,7 +115,7 @@ extension SearchViewController: UITableViewDelegate {
 extension SearchViewController: UISearchBarDelegate {
    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
       NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.reload(_:)), object: searchBar)
-      perform(#selector(self.reload(_:)), with: searchBar, afterDelay: 0.75)
+      perform(#selector(self.reload(_:)), with: searchBar, afterDelay: 0.40)
    }
    
    @objc func reload(_ searchBar: UISearchBar) {

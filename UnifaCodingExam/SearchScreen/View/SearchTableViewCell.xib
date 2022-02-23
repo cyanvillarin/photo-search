@@ -41,7 +41,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQI-o5-mUR">
-                        <rect key="frame" x="40" y="114" width="321" height="1"/>
+                        <rect key="frame" x="30" y="114" width="341" height="1"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="spb-7b-Rdh"/>
@@ -50,14 +50,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="YKJ-qQ-SWL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="1xL-6P-Xbn"/>
-                    <constraint firstItem="zQI-o5-mUR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="EyQ-g6-kDj"/>
+                    <constraint firstItem="zQI-o5-mUR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="EyQ-g6-kDj"/>
                     <constraint firstItem="Qh9-20-HmL" firstAttribute="top" secondItem="9dl-sd-B5V" secondAttribute="bottom" constant="5" id="VFQ-4b-xDs"/>
                     <constraint firstItem="Qh9-20-HmL" firstAttribute="leading" secondItem="9dl-sd-B5V" secondAttribute="leading" id="eDz-QS-yn8"/>
                     <constraint firstAttribute="trailing" secondItem="9dl-sd-B5V" secondAttribute="trailing" constant="16" id="gxu-8C-L25"/>
                     <constraint firstAttribute="bottom" secondItem="zQI-o5-mUR" secondAttribute="bottom" id="kZ3-zh-wLg"/>
                     <constraint firstItem="YKJ-qQ-SWL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pcf-Zv-Xy8"/>
                     <constraint firstItem="9dl-sd-B5V" firstAttribute="leading" secondItem="YKJ-qQ-SWL" secondAttribute="trailing" constant="16" id="peP-3C-Uka"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="zQI-o5-mUR" secondAttribute="trailing" constant="20" id="wPz-Ev-sRD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="zQI-o5-mUR" secondAttribute="trailing" constant="10" id="wPz-Ev-sRD"/>
                     <constraint firstItem="9dl-sd-B5V" firstAttribute="centerY" secondItem="YKJ-qQ-SWL" secondAttribute="centerY" constant="-13" id="yze-1l-nn4"/>
                 </constraints>
             </tableViewCellContentView>

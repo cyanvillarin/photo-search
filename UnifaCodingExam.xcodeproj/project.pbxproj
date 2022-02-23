@@ -28,6 +28,7 @@
 		877675D227C4B1AE00011859 /* UnifaCodingExamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675D127C4B1AE00011859 /* UnifaCodingExamUITests.swift */; };
 		877675D427C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */; };
 		87767A3E27C5C96D00C6EDFA /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A3D27C5C96D00C6EDFA /* ApiService.swift */; };
+		87767A4127C5FDAF00C6EDFA /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */; };
 		E29ADB1183316C3BF26EA38D /* Pods_UnifaCodingExamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		877675D127C4B1AE00011859 /* UnifaCodingExamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamUITests.swift; sourceTree = "<group>"; };
 		877675D327C4B1AE00011859 /* UnifaCodingExamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifaCodingExamUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		87767A3D27C5C96D00C6EDFA /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		A3B7ECCBFD31B60D59777061 /* Pods-UnifaCodingExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam.debug.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam.debug.xcconfig"; sourceTree = "<group>"; };
 		AC98F0EA0F255C451D273B76 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,9 +266,18 @@
 		87767A3B27C5C93200C6EDFA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				87767A3F27C5FD8F00C6EDFA /* Extension */,
 				87767A3D27C5C96D00C6EDFA /* ApiService.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		87767A3F27C5FD8F00C6EDFA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				87767A4027C5FDAF00C6EDFA /* UIColorExtensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,6 +545,7 @@
 				877675B527C4B1AB00011859 /* SearchViewController.swift in Sources */,
 				8770459A27C4B56700717C0C /* SearchViewModel.swift in Sources */,
 				877675B127C4B1AB00011859 /* AppDelegate.swift in Sources */,
+				87767A4127C5FDAF00C6EDFA /* UIColorExtensions.swift in Sources */,
 				87767A3E27C5C96D00C6EDFA /* ApiService.swift in Sources */,
 				877675B327C4B1AB00011859 /* SceneDelegate.swift in Sources */,
 				877045A227C4F66C00717C0C /* SearchApiResponse.swift in Sources */,

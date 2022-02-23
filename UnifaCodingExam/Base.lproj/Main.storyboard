@@ -73,22 +73,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7y3-1f-U8T">
-                                <rect key="frame" x="57" y="94" width="300" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="vMc-iD-NfU"/>
-                                    <constraint firstAttribute="height" constant="300" id="z1v-IH-qVh"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="54" width="394" height="798"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ca-0RJ">
-                                <rect key="frame" x="30" y="424" width="354" height="284.5"/>
-                                <string key="text">This photo is a Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This photo is a Lorem Ipsum is simply dummy text of the printing and typesetting industry." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZO-ca-0RJ">
+                                <rect key="frame" x="30" y="768.5" width="354" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken by: Hiroto Shimizu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFV-vr-koU">
-                                <rect key="frame" x="30" y="728.5" width="354" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="30" y="815" width="354" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -96,14 +91,16 @@
                         <viewLayoutGuide key="safeArea" id="5Ia-D5-YKl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Ia-D5-YKl" firstAttribute="trailing" secondItem="sFV-vr-koU" secondAttribute="trailing" constant="30" id="8Rz-5R-s2Y"/>
-                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="30" id="Aeh-J0-yFF"/>
-                            <constraint firstItem="7y3-1f-U8T" firstAttribute="centerX" secondItem="jFh-zM-1FC" secondAttribute="centerX" id="Ch1-Oz-V8f"/>
-                            <constraint firstItem="sFV-vr-koU" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="30" id="gFb-OT-Fzr"/>
-                            <constraint firstItem="5Ia-D5-YKl" firstAttribute="trailing" secondItem="jZO-ca-0RJ" secondAttribute="trailing" constant="30" id="ioE-B4-Ydk"/>
-                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="top" secondItem="7y3-1f-U8T" secondAttribute="bottom" constant="30" id="p95-Bt-SSz"/>
-                            <constraint firstItem="sFV-vr-koU" firstAttribute="top" secondItem="jZO-ca-0RJ" secondAttribute="bottom" constant="20" id="tiy-1C-ODa"/>
-                            <constraint firstItem="7y3-1f-U8T" firstAttribute="top" secondItem="5Ia-D5-YKl" secondAttribute="top" constant="50" id="tlJ-Tb-ADm"/>
+                            <constraint firstItem="5Ia-D5-YKl" firstAttribute="trailing" secondItem="jZO-ca-0RJ" secondAttribute="trailing" constant="30" id="5ma-4H-6Dn"/>
+                            <constraint firstItem="sFV-vr-koU" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="30" id="E7P-R0-qlV"/>
+                            <constraint firstItem="5Ia-D5-YKl" firstAttribute="trailing" secondItem="7y3-1f-U8T" secondAttribute="trailing" constant="10" id="IMK-rV-JXK"/>
+                            <constraint firstItem="jZO-ca-0RJ" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="30" id="Jfe-sb-NIs"/>
+                            <constraint firstItem="7y3-1f-U8T" firstAttribute="top" secondItem="5Ia-D5-YKl" secondAttribute="top" constant="10" id="WyP-77-yjO"/>
+                            <constraint firstItem="sFV-vr-koU" firstAttribute="top" secondItem="jZO-ca-0RJ" secondAttribute="bottom" constant="8" id="dBe-jh-AB0"/>
+                            <constraint firstItem="5Ia-D5-YKl" firstAttribute="bottom" secondItem="7y3-1f-U8T" secondAttribute="bottom" constant="10" id="mq9-CK-bSu"/>
+                            <constraint firstItem="5Ia-D5-YKl" firstAttribute="trailing" secondItem="sFV-vr-koU" secondAttribute="trailing" constant="30" id="o21-X7-kMe"/>
+                            <constraint firstItem="7y3-1f-U8T" firstAttribute="leading" secondItem="5Ia-D5-YKl" secondAttribute="leading" constant="10" id="q1i-bS-VcU"/>
+                            <constraint firstItem="5Ia-D5-YKl" firstAttribute="bottom" secondItem="sFV-vr-koU" secondAttribute="bottom" constant="30" id="tzM-kT-bWk"/>
                         </constraints>
                     </view>
                     <connections>
@@ -114,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jii-pu-I5i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="761" y="94"/>
+            <point key="canvasLocation" x="760.86956521739137" y="93.75"/>
         </scene>
     </scenes>
     <resources>
