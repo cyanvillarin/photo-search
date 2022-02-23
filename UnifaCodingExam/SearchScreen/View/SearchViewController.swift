@@ -23,16 +23,13 @@ class SearchViewController: UIViewController {
    override func viewDidLoad() {
       super.viewDidLoad()
       
-      tableView.delegate = self
+      searchBar.delegate = self
       
+      tableView.delegate = self
       tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
       tableView.separatorStyle = .none
       
       self.bindViewModel()
-      
-      if let queryKeyword = searchBar.text {
-         viewModel.fetchPhotos(queryKeyword: queryKeyword)
-      }
    }
    
    public func bindViewModel() {
@@ -74,5 +71,20 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UITableViewDelegate {
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       return cellHeight
+   }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.reload(_:)), object: searchBar)
+      perform(#selector(self.reload(_:)), with: searchBar, afterDelay: 0.75)
+   }
+   
+   @objc func reload(_ searchBar: UISearchBar) {
+      guard let queryKeyword = searchBar.text, queryKeyword.trimmingCharacters(in: .whitespaces) != "" else {
+         print("nothing to search")
+         return
+      }
+      viewModel.fetchPhotos(queryKeyword: queryKeyword)
    }
 }

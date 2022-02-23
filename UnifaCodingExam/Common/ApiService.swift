@@ -72,8 +72,12 @@ class ApiService {
             return
          }
          
-         let decodedResult = try! JSONDecoder().decode(SearchApiResponse.self, from: data)
-         completion(decodedResult.photos)
+         do {
+            let decodedResult = try JSONDecoder().decode(SearchApiResponse.self, from: data)
+            completion(decodedResult.photos)
+         } catch {
+            return
+         }
          
       })
       
