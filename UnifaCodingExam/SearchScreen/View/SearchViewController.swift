@@ -13,6 +13,7 @@ class SearchViewController: UIViewController {
    
    @IBOutlet var searchBar: UISearchBar!
    @IBOutlet var tableView: UITableView!
+   @IBOutlet var noResultsFoundView: UIView!
    
    var viewModel = SearchViewModel(apiService: ApiService())
    let disposeBag = DisposeBag()
@@ -51,6 +52,8 @@ class SearchViewController: UIViewController {
       imageView.contentMode = .scaleAspectFit
       navigationItem.titleView = imageView
       
+      noResultsFoundView.isHidden = true
+      
       searchBar.delegate = self
       searchBar.placeholder = "Please search here"
       
@@ -87,17 +90,29 @@ class SearchViewController: UIViewController {
             }
          }).disposed(by: disposeBag)
       
-      /// bind the isLoading to show the LoadingView while calling the API
-      viewModel.isLoading.subscribe(onNext: { (isLoading) in
+      /// bind the shouldShowLoadingView to show the LoadingView while calling the API
+      viewModel.shouldShowLoadingView.subscribe(onNext: { (shouldShowLoading) in
          DispatchQueue.main.async {
-            print(isLoading)
-            if isLoading {
+            if shouldShowLoading {
                LoadingView.show()
             } else {
                LoadingView.hide()
             }
          }
       }).disposed(by: disposeBag)
+      
+      /// bind the shouldShowNoResultsView to show the noResultsFoundView while calling the API
+      viewModel.shouldShowNoResultsView.subscribe(onNext: { (shouldShowNoResultsView) in
+         DispatchQueue.main.async {
+            print(shouldShowNoResultsView)
+            if shouldShowNoResultsView {
+               self.noResultsFoundView.isHidden = false
+            } else {
+               self.noResultsFoundView.isHidden = true
+            }
+         }
+      }).disposed(by: disposeBag)
+      
    }
    
    /// Moves to the Details screen
