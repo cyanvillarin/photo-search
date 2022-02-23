@@ -7,64 +7,27 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class SearchViewModel {
    
    public var photos: PublishSubject<[Photo]> = PublishSubject()
    
-   private var apiEndpoint = "https://api.pexels.com/v1/search"
+   var apiService: ApiService!
    
-   private var apiKey: String {
-      get {
-         guard let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
-            fatalError("Couldn't find file 'Keys.plist'.")
-         }
-         let plist = NSDictionary(contentsOfFile: filePath)
-         guard let value = plist?.object(forKey: "API_KEY") as? String else {
-            fatalError("Couldn't find key 'API_KEY' in 'Keys.plist'.")
-         }
-         return value
-      }
+   init(apiService: ApiService) {
+      self.apiService = apiService
    }
    
-   /// fetches the photos objects from the API
-   public func fetchPhotosFromServer() {
+   func fetchPhotos(queryKeyword: String) {
       
-      let session = URLSession.shared
-      
-      var urlComponents = URLComponents(string: apiEndpoint)!
-      urlComponents.queryItems = [
-          URLQueryItem(name: "query", value: "pen"),
-      ]
-      
-      guard let url = urlComponents.url else {
-         return
+      Task.init {
+         let retrievedPhotos = await self.apiService.fetchPhotos(queryKeyword: queryKeyword)
+         self.photos.onNext(retrievedPhotos)
       }
-      
-      var request = URLRequest(url: url)
-      request.httpMethod = "GET"
-      request.setValue(apiKey, forHTTPHeaderField: "Authorization")
-      
-      let task = session.dataTask(with: request, completionHandler: { data, response, error in
-         
-         if let error = error {
-            print("There is some error \(error.localizedDescription)")
-            return
-         }
-         
-         guard let data = data else {
-            print("There is no data")
-            return
-         }
-         
-         let decodedResult = try! JSONDecoder().decode(SearchApiResponse.self, from: data)
-         self.photos.onNext(decodedResult.photos)
-         
-      })
-      
-      task.resume()
-      
+
    }
+   
    
    
 }

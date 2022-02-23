@@ -14,7 +14,7 @@ class SearchViewController: UIViewController {
    @IBOutlet var searchBar: UISearchBar!
    @IBOutlet var tableView: UITableView!
    
-   var viewModel = SearchViewModel()
+   var viewModel = SearchViewModel(apiService: ApiService())
    let disposeBag = DisposeBag()
    
    let cellID = "SearchTableViewCell"
@@ -30,7 +30,9 @@ class SearchViewController: UIViewController {
       
       self.bindViewModel()
       
-      viewModel.fetchPhotosFromServer()
+      if let queryKeyword = searchBar.text {
+         viewModel.fetchPhotos(queryKeyword: queryKeyword)
+      }
    }
    
    public func bindViewModel() {
