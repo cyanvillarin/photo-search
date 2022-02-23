@@ -41,7 +41,8 @@ class ApiService {
       /// add the query here
       urlComponents.queryItems = [
           URLQueryItem(name: "query", value: queryKeyword),
-          URLQueryItem(name: "orientation", value: "portrait")
+          URLQueryItem(name: "orientation", value: "portrait"),
+          URLQueryItem(name: "per_page", value: "30")
       ]
       
       /// check if we could get the URL from the URLComponents
