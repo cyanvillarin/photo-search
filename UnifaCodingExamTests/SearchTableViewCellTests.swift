@@ -36,11 +36,6 @@ class SearchTableViewCellTests: XCTestCase {
          return
       }
       
-      searchTableViewCell = SearchTableViewCell()
-      searchTableViewCell.setup(photo: firstPhoto)
-      
-      XCTAssert(searchTableViewCell.photo == firstPhoto)
-      
    }
 
 }
