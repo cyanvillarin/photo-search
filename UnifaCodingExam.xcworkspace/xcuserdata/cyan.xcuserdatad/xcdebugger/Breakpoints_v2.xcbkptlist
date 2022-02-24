@@ -7,49 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "43590240-E87C-4C5E-9AE6-9F34E8B23564"
+            uuid = "4C6E6693-362E-4D71-811C-B9AC1D7D2EF1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UnifaCodingExamTests/SearchViewModelTests.swift"
+            filePath = "UnifaCodingExam/SearchScreen/ViewModel/SearchViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "test_fetchMorePhotosIfNeeded()"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "fetchMorePhotosIfNeeded(paginationType:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "43590240-E87C-4C5E-9AE6-9F34E8B23564 - ac7ccb99769523a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for UnifaCodingExamTests.SearchViewModelTests.test_fetchMorePhotosIfNeeded() async -&gt; ()"
-                  moduleName = "UnifaCodingExamTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyan/Desktop/unifa-coding-exam/UnifaCodingExamTests/SearchViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "436">
-               </Location>
-               <Location
-                  uuid = "43590240-E87C-4C5E-9AE6-9F34E8B23564 - 157171385b985af"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for UnifaCodingExamTests.SearchViewModelTests.test_fetchMorePhotosIfNeeded() async -&gt; ()"
-                  moduleName = "UnifaCodingExamTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/cyan/Desktop/unifa-coding-exam/UnifaCodingExamTests/SearchViewModelTests.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

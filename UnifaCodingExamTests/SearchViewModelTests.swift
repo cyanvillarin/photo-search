@@ -36,30 +36,32 @@ class SearchViewModelTests: XCTestCase {
    }
    
    func test_fetchPhotos() async {
-      
       await viewModel.fetchPhotos(queryKeyword: "test")
       
-//      XCTAssertEqual(sut.photos[0].id, 1)
-//      XCTAssertEqual(sut.photos[0].photographer, "Photographer 1")
-//      XCTAssertEqual(sut.photos[0].alt, "Mock Photo 1")
-//
-//      XCTAssertEqual(sut.photos[1].id, 2)
-//      XCTAssertEqual(sut.photos[1].photographer, "Photographer 2")
-//      XCTAssertEqual(sut.photos[1].alt, "Mock Photo 2")
-//
-//      XCTAssertEqual(sut.photos[2].id, 3)
-//      XCTAssertEqual(sut.photos[2].photographer, "Photographer 3")
-//      XCTAssertEqual(sut.photos[2].alt, "Mock Photo 3")
+      /// check if pageNumber is set to 1 when fetchPhotos is called
+      XCTAssertEqual(viewModel.pageNumber, 1)
+      
+      /// check if nextPageURL and prevPageURL are updated when fetchPhotos
+      XCTAssertEqual(viewModel.nextPageURL, "expected_next_page_URL")
+      XCTAssertEqual(viewModel.prevPageURL, "expected_prev_page_URL")
    }
    
    func test_fetchMorePhotosIfNeeded() async {
 
+      /// need to call fetchPhotos first, to set the nextPage and prevPage variables
+      await viewModel.fetchPhotos(queryKeyword: "anything_here")
+      
+      /// check if pageNumber increases by 1 if paginationType is .next
+      viewModel.pageNumber = 1
       await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
       XCTAssertEqual(viewModel.pageNumber, 2)
       
+      /// check if pageNumber increases by 1 if paginationType is .prev
+      viewModel.pageNumber = 2
       await viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
       XCTAssertEqual(viewModel.pageNumber, 1)
       
+      /// check if nextPageURL and prevPageURL are updated when fetchMorePhotosIfNeeded
       await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
       XCTAssertEqual(viewModel.nextPageURL, "expected_next_page_URL")
       XCTAssertEqual(viewModel.prevPageURL, "expected_prev_page_URL")
