@@ -36,7 +36,11 @@ class SearchViewController: UIViewController {
       bindViewModel()
       
       /// fetch the photos with the keyword Kindergarten for the first results
-      viewModel.fetchPhotos(queryKeyword: "Kindergarten")
+      /// since we are using async/await, we need to use Task.init whenever
+      /// we call the asynchronous function (with await keyword)
+      Task.init {
+         await viewModel.fetchPhotos(queryKeyword: "Kindergarten")
+      }
    }
    
    // MARK: - Private Methods
@@ -221,7 +225,11 @@ extension SearchViewController: UISearchBarDelegate {
       }
       
       /// fetch photos with the new keyword
-      viewModel.fetchPhotos(queryKeyword: queryKeyword)
+      /// since we are using async/await, we need to use Task.init whenever
+      /// we call the asynchronous function (with await keyword)
+      Task.init {
+         await viewModel.fetchPhotos(queryKeyword: queryKeyword)
+      }
    }
 }
 
@@ -230,12 +238,24 @@ extension SearchViewController: UIScrollViewDelegate {
       
       /// if the user scrolls to the top
       if (tableView.contentOffset.y < 0) {
-         viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
+         
+         /// since we are using async/await, we need to use Task.init whenever
+         /// we call the asynchronous function (with await keyword)
+         Task.init {
+            await viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
+         }
+         
       }
       
       /// if the user scrolls to the bottom
       if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height) {
-         viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
+         
+         /// since we are using async/await, we need to use Task.init whenever
+         /// we call the asynchronous function (with await keyword)
+         Task.init {
+            await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
+         }
+         
       }
       
    }
