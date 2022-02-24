@@ -119,8 +119,10 @@ class SearchViewController: UIViewController {
          DispatchQueue.main.async {
             if shouldShowLoading {
                LoadingView.show()
+               self.tableView.isUserInteractionEnabled = false
             } else {
                LoadingView.hide()
+               self.tableView.isUserInteractionEnabled = true
             }
          }
       }).disposed(by: disposeBag)
