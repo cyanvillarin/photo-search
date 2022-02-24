@@ -73,23 +73,7 @@ class SearchViewModel {
             }
             
          } catch {
-            
-            /// in case something wrong happens, resets the value of the Observable into empty array
-            self.photos.onNext([])
-            
-            /// set the next and prev page to nil
-            self.nextPageURL = nil
-            self.prevPageURL = nil
-            
-            /// hide the LoadingView
-            shouldShowLoadingView.onNext(false)
-            
-            /// show the No Results View
-            shouldShowNoResultsView.onNext(true)
-            
-            /// print the error
-            print("error \(error.localizedDescription)")
-            
+            resetVariables(error: error)
          }
       }
    }
@@ -146,10 +130,30 @@ class SearchViewModel {
             self.nextPageURL = response.next_page
             
          } catch {
-            /// print the error
-            print("error \(error.localizedDescription)")
+            resetVariables(error: error)
          }
       }
+      
+   }
+   
+   /// Function to be called if the API calls gets into the catch block
+   func resetVariables(error: Error) {
+      
+      /// in case something wrong happens, resets the value of the Observable into empty array
+      self.photos.onNext([])
+      
+      /// set the next and prev page to nil
+      self.nextPageURL = nil
+      self.prevPageURL = nil
+      
+      /// hide the LoadingView
+      shouldShowLoadingView.onNext(false)
+      
+      /// show the No Results View
+      shouldShowNoResultsView.onNext(true)
+      
+      /// print the error
+      print("error \(error.localizedDescription)")
       
    }
    
