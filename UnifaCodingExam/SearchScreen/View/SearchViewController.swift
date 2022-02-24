@@ -113,7 +113,7 @@ class SearchViewController: UIViewController {
       self.tableView.rx.itemSelected
          .subscribe(onNext: { [weak self] indexPath in
             let cell = self?.tableView.cellForRow(at: indexPath) as! SearchTableViewCell
-            if let cellPhoto = cell.photo {
+            if let cellPhoto = cell.viewModel.photo {
                self?.transitionToDetailView(photo: cellPhoto)
             }
          }).disposed(by: disposeBag)

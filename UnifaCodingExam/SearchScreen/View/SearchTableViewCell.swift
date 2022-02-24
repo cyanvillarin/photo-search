@@ -11,7 +11,7 @@ import SDWebImage
 class SearchTableViewCell: UITableViewCell {
    
    // MARK: - Variables
-   var photo: Photo!
+   var viewModel: SearchTableViewCellViewModel!
    @IBOutlet var itemImageView: UIImageView!
    @IBOutlet var itemDescription: UILabel!
    @IBOutlet var itemPhotographer: UILabel!
@@ -20,6 +20,7 @@ class SearchTableViewCell: UITableViewCell {
    // MARK: - Override Methods
    override func awakeFromNib() {
       super.awakeFromNib()
+      viewModel = SearchTableViewCellViewModel()
       itemImageView.layer.masksToBounds = true
       itemImageView.layer.cornerRadius = 8.0
    }
@@ -30,20 +31,18 @@ class SearchTableViewCell: UITableViewCell {
    
    // MARK: - Public Methods
    public func setup(photo: Photo) {
-      self.photo = photo
       
-      /// add a placeholder color
-      let averageColor = photo.avg_color.replacingOccurrences(of: "#", with: "")
+      self.viewModel.photo = photo
       
       /// configure description
-      itemDescription.text = photo.alt
-      itemDescription.textColor = UIColor(hexString: averageColor)
+      itemDescription.text = self.viewModel.photoDescription
+      itemDescription.textColor = self.viewModel.photoColor
       
       /// configure image
-      itemImageView.backgroundColor = UIColor(hexString: averageColor)
+      itemImageView.backgroundColor = self.viewModel.photoColor
       activityIndicator.startAnimating()
       activityIndicator.isHidden = false
-      if let url = URL(string: photo.src.small) {
+      if let url = URL(string: self.viewModel.photoURL) {
          itemImageView.sd_setImage(with: url, completed: { _,_,_,_ in
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
@@ -51,7 +50,7 @@ class SearchTableViewCell: UITableViewCell {
       }
       
       /// configure photographer
-      itemPhotographer.text = photo.photographer
+      itemPhotographer.text = self.viewModel.photoPhotographer
    }
    
 }
