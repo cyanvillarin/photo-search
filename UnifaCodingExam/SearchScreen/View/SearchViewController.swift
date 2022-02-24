@@ -82,7 +82,7 @@ class SearchViewController: UIViewController {
    private func setupUI() {
       noResultsFoundView.isHidden = true
       searchBar.delegate = self
-      searchBar.placeholder = "Please search here :)"
+      searchBar.placeholder = "ここで検索してください :)"
       tableView.delegate = self
       tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
       tableView.separatorStyle = .none

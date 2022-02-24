@@ -120,8 +120,14 @@ class SearchViewModel {
                paginationURL = prevPage
             }
             
+            /// show the LoadingView
+            shouldShowLoadingView.onNext(true)
+            
             /// fetch next photos from API
             let response = try await self.apiService.fetchNextOrPrevPhotos(paginationURL: paginationURL)
+            
+            /// hide the LoadingView
+            shouldShowLoadingView.onNext(false)
             
             /// scroll to top or bottom after retrieving data from API
             if paginationType == .next {

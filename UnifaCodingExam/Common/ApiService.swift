@@ -50,46 +50,12 @@ class ApiService {
          throw CustomError.failedToGetUrl
       }
       
-      /// add the Authorization header
-      var request = URLRequest(url: url)
-      request.httpMethod = "GET"
-      request.setValue(apiKey, forHTTPHeaderField: "Authorization")
-      
-      /// since we are supporting iOS 13, and we can't use the URLSession.shared.dataTask with async/await
-      /// we have to use withCheckThrowingContinuation since this will allow us to us an asynchrounous function (using completionHandler) inside
-      /// an asynchrounous function (using the new async/await) functions
-      return try await withCheckedThrowingContinuation { continuation in
-         
-         let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
-            
-            /// check if there is an error returned from API
-            if let error = error {
-               continuation.resume(throwing: error)
-               return
-            }
-            
-            /// check if we could retrieve the data
-            guard let data = data else {
-               continuation.resume(throwing: CustomError.failedToGetData)
-               return
-            }
-            
-            /// decode the data into JSON
-            do {
-               let decodedResult = try JSONDecoder().decode(PhotosApiResponse.self, from: data)
-               continuation.resume(returning: decodedResult)
-            } catch {
-               continuation.resume(throwing: error)
-            }
-            
-         })
-         
-         task.resume()
-      }
-      
+      /// perform the API call
+      let response = try await performApiCall(inputUrl: url)
+      return response
    }
    
-   /// fetches the next or prev photos from the API (for Pagination)
+   /// fetches the next or previous photos from the API (for Pagination)
    /// will be used by the View Models
    /// using the newly released async/await functions
    public func fetchNextOrPrevPhotos(paginationURL: String) async throws -> PhotosApiResponse {
@@ -99,8 +65,18 @@ class ApiService {
          throw CustomError.failedToGetUrl
       }
       
+      /// perform the API call
+      let response = try await performApiCall(inputUrl: url)
+      return response
+   }
+   
+   // MARK: - Private Methods
+   /// This is a private method to be used by both fetchPhotos and fetchNextOrPrevPhotos
+   /// - Parameter inputUrl: input URL
+   private func performApiCall(inputUrl: URL)  async throws -> PhotosApiResponse {
+      
       /// add the Authorization header
-      var request = URLRequest(url: url)
+      var request = URLRequest(url: inputUrl)
       request.httpMethod = "GET"
       request.setValue(apiKey, forHTTPHeaderField: "Authorization")
       
@@ -135,7 +111,6 @@ class ApiService {
          
          task.resume()
       }
-      
    }
    
 }
