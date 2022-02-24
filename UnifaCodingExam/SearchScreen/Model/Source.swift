@@ -18,3 +18,16 @@ struct Source: Decodable {
    var landscape: String
    var tiny: String
 }
+
+extension Source: Equatable {
+   static func ==(lhs: Source, rhs: Source) -> Bool {
+      return (lhs.original == rhs.original)
+      && (lhs.large2x == rhs.large2x)
+      && (lhs.large == rhs.large)
+      && (lhs.medium == rhs.medium)
+      && (lhs.small == rhs.small)
+      && (lhs.portrait == rhs.portrait)
+      && (lhs.landscape == rhs.landscape)
+      && (lhs.tiny == rhs.tiny)
+   }
+}

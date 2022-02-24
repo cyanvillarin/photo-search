@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		26EFB2611EC40FDD496AB1CD /* Pods_UnifaCodingExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7881FC94DAEB800686FC21B6 /* Pods_UnifaCodingExam.framework */; };
 		3264EFC4EAF0C286A82B7875 /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84787CA4E965D7D91D98F9BE /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework */; };
+		87520AF127C7D087000C0752 /* SearchTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87520AF027C7D087000C0752 /* SearchTableViewCellTests.swift */; };
+		87520AF327C7D0EF000C0752 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87520AF227C7D0EF000C0752 /* MockApiService.swift */; };
+		87520AF527C7D7C3000C0752 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87520AF427C7D7C3000C0752 /* SearchViewControllerTests.swift */; };
+		87520AF727C7DD6B000C0752 /* SearchTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87520AF627C7DD6B000C0752 /* SearchTableViewCellViewModel.swift */; };
 		8770459027C4B38300717C0C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770458F27C4B38300717C0C /* DetailViewController.swift */; };
 		8770459A27C4B56700717C0C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8770459927C4B56700717C0C /* SearchViewModel.swift */; };
 		8770459C27C4C64500717C0C /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8770459B27C4C64500717C0C /* Keys.plist */; };
@@ -59,6 +63,10 @@
 		7881FC94DAEB800686FC21B6 /* Pods_UnifaCodingExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnifaCodingExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnifaCodingExamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84787CA4E965D7D91D98F9BE /* Pods_UnifaCodingExam_UnifaCodingExamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnifaCodingExam_UnifaCodingExamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87520AF027C7D087000C0752 /* SearchTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellTests.swift; sourceTree = "<group>"; };
+		87520AF227C7D0EF000C0752 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
+		87520AF427C7D7C3000C0752 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
+		87520AF627C7DD6B000C0752 /* SearchTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		8770458F27C4B38300717C0C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8770459927C4B56700717C0C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8770459B27C4C64500717C0C /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
@@ -182,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				8770459927C4B56700717C0C /* SearchViewModel.swift */,
+				87520AF627C7DD6B000C0752 /* SearchTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,7 +245,10 @@
 		877675C627C4B1AE00011859 /* UnifaCodingExamTests */ = {
 			isa = PBXGroup;
 			children = (
+				87520AF227C7D0EF000C0752 /* MockApiService.swift */,
 				877675C727C4B1AE00011859 /* SearchViewModelTests.swift */,
+				87520AF427C7D7C3000C0752 /* SearchViewControllerTests.swift */,
+				87520AF027C7D087000C0752 /* SearchTableViewCellTests.swift */,
 			);
 			path = UnifaCodingExamTests;
 			sourceTree = "<group>";
@@ -543,6 +555,7 @@
 				877045A427C4F77800717C0C /* Source.swift in Sources */,
 				877045A027C4F0F300717C0C /* Photo.swift in Sources */,
 				877675B527C4B1AB00011859 /* SearchViewController.swift in Sources */,
+				87520AF727C7DD6B000C0752 /* SearchTableViewCellViewModel.swift in Sources */,
 				8770459A27C4B56700717C0C /* SearchViewModel.swift in Sources */,
 				877675B127C4B1AB00011859 /* AppDelegate.swift in Sources */,
 				87767A4127C5FDAF00C6EDFA /* UIColorExtensions.swift in Sources */,
@@ -558,7 +571,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87520AF327C7D0EF000C0752 /* MockApiService.swift in Sources */,
 				877675C827C4B1AE00011859 /* SearchViewModelTests.swift in Sources */,
+				87520AF527C7D7C3000C0752 /* SearchViewControllerTests.swift in Sources */,
+				87520AF127C7D087000C0752 /* SearchTableViewCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

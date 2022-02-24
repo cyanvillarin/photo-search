@@ -21,3 +21,19 @@ struct Photo: Decodable {
    var liked: Bool
    var alt: String
 }
+
+extension Photo: Equatable {
+   static func ==(lhs: Photo, rhs: Photo) -> Bool {
+      return (lhs.id == rhs.id)
+      && (lhs.width == rhs.width)
+      && (lhs.height == rhs.height)
+      && (lhs.url == rhs.url)
+      && (lhs.photographer == rhs.photographer)
+      && (lhs.photographer_url == rhs.photographer_url)
+      && (lhs.photographer_id == rhs.photographer_id)
+      && (lhs.avg_color == rhs.avg_color)
+      && (lhs.src == rhs.src)
+      && (lhs.liked == rhs.liked)
+      && (lhs.alt == rhs.alt)
+   }
+}
