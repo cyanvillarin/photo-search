@@ -158,6 +158,7 @@ class SearchViewController: UIViewController {
                let y = self.tableView.contentSize.height - self.tableView.frame.size.height
                if y < 0 { return }
                self.tableView.setContentOffset(CGPoint(x: 0, y: y), animated: false)
+               self.tableView.layoutIfNeeded()
             }
          }
       }).disposed(by: disposeBag)
