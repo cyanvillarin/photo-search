@@ -15,6 +15,7 @@ class SearchTableViewCell: UITableViewCell {
    @IBOutlet var itemImageView: UIImageView!
    @IBOutlet var itemDescription: UILabel!
    @IBOutlet var itemPhotographer: UILabel!
+   @IBOutlet var activityIndicator: UIActivityIndicatorView!
    
    // MARK: - Override Methods
    override func awakeFromNib() {
@@ -40,8 +41,13 @@ class SearchTableViewCell: UITableViewCell {
       
       /// configure image
       itemImageView.backgroundColor = UIColor(hexString: averageColor)
+      activityIndicator.startAnimating()
+      activityIndicator.isHidden = false
       if let url = URL(string: photo.src.small) {
-         itemImageView.sd_setImage(with: url, completed: nil)
+         itemImageView.sd_setImage(with: url, completed: { _,_,_,_ in
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+         })
       }
       
       /// configure photographer

@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
    
    // MARK: - Variables
    var photo: Photo!
+   @IBOutlet var activityIndicator: UIActivityIndicatorView!
    @IBOutlet var itemImageView: UIImageView!
    @IBOutlet var itemDescriptionLabel: UILabel!
    @IBOutlet var itemPhotographerLabel: UILabel!
@@ -28,8 +29,14 @@ class DetailViewController: UIViewController {
       let averageColor = photo.avg_color.replacingOccurrences(of: "#", with: "")
       itemImageView.backgroundColor = UIColor(hexString: averageColor)
       
+      activityIndicator.style = .large
+      activityIndicator.startAnimating()
+      activityIndicator.isHidden = false
       if let url = URL(string: photo.src.large) {
-         itemImageView.sd_setImage(with: url, completed: nil)
+         itemImageView.sd_setImage(with: url, completed: { _,_,_,_ in 
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+         })
       }
       itemDescriptionLabel.text = photo.alt
       itemPhotographerLabel.text = "撮影者：\(photo.photographer)"

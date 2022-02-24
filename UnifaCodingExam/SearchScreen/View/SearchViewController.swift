@@ -207,7 +207,7 @@ extension SearchViewController: UISearchBarDelegate {
       
       /// do not search if there is no input in the search bar, or if it is a whitespace
       guard let queryKeyword = searchBar.text, queryKeyword.trimmingCharacters(in: .whitespaces) != "" else {
-         print("nothing to search")
+         print("Nothing to search")
          return
       }
       
@@ -230,13 +230,11 @@ extension SearchViewController: UIScrollViewDelegate {
       
       /// if the user scrolls to the top
       if (tableView.contentOffset.y < 0) {
-         print("im scrolling to the top")
          viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
       }
       
       /// if the user scrolls to the bottom
       if ((tableView.contentOffset.y + tableView.frame.size.height) >= tableView.contentSize.height) {
-         print("im scrolling to the bottom")
          viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
       }
       

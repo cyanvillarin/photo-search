@@ -62,16 +62,13 @@ class SearchViewModel {
             self.prevPageURL = response.prev_page
             self.nextPageURL = response.next_page
             
-            /// reset the page number
+            /// reset the page number (since this is a fresh new search)
             pageNumber = 1
             currentPageNumber.onNext(pageNumber)
             
-            /// in case there is no photos returned
+            /// in case there is no photos returned, show the No Results View
             if response.photos.count == 0 {
-               
-               print("no photos found")
-               
-               /// show the No Results View
+               print("No photos found")
                shouldShowNoResultsView.onNext(true)
             }
             
@@ -137,9 +134,11 @@ class SearchViewModel {
                shouldScrollToBottom.onNext(true)
                pageNumber = pageNumber - 1
             }
+            
+            /// update the currertPageNumber (updates the label on View)
             currentPageNumber.onNext(pageNumber)
             
-            /// update photos
+            /// update photos (updates the tableView)
             self.photos.onNext(response.photos)
             
             /// set the next page and prev page  (if available)

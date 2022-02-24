@@ -53,23 +53,29 @@
                             <constraint firstAttribute="height" constant="1" id="spb-7b-Rdh"/>
                         </constraints>
                     </view>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="L0X-68-AtA">
+                        <rect key="frame" x="50" y="47.5" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="YKJ-qQ-SWL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="1xL-6P-Xbn"/>
                     <constraint firstItem="zQI-o5-mUR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="EyQ-g6-kDj"/>
+                    <constraint firstItem="L0X-68-AtA" firstAttribute="centerY" secondItem="YKJ-qQ-SWL" secondAttribute="centerY" id="PWC-bm-ZiG"/>
                     <constraint firstItem="Qh9-20-HmL" firstAttribute="top" secondItem="9dl-sd-B5V" secondAttribute="bottom" constant="3" id="VFQ-4b-xDs"/>
                     <constraint firstItem="Qh9-20-HmL" firstAttribute="leading" secondItem="9dl-sd-B5V" secondAttribute="leading" id="eDz-QS-yn8"/>
                     <constraint firstAttribute="trailing" secondItem="9dl-sd-B5V" secondAttribute="trailing" constant="16" id="gxu-8C-L25"/>
                     <constraint firstAttribute="bottom" secondItem="zQI-o5-mUR" secondAttribute="bottom" id="kZ3-zh-wLg"/>
                     <constraint firstItem="YKJ-qQ-SWL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pcf-Zv-Xy8"/>
                     <constraint firstItem="9dl-sd-B5V" firstAttribute="leading" secondItem="YKJ-qQ-SWL" secondAttribute="trailing" constant="16" id="peP-3C-Uka"/>
+                    <constraint firstItem="L0X-68-AtA" firstAttribute="centerX" secondItem="YKJ-qQ-SWL" secondAttribute="centerX" id="vu1-CW-lL8"/>
                     <constraint firstAttribute="trailingMargin" secondItem="zQI-o5-mUR" secondAttribute="trailing" constant="10" id="wPz-Ev-sRD"/>
                     <constraint firstItem="9dl-sd-B5V" firstAttribute="centerY" secondItem="YKJ-qQ-SWL" secondAttribute="centerY" constant="-13" id="yze-1l-nn4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicator" destination="L0X-68-AtA" id="Lam-5P-dgy"/>
                 <outlet property="itemDescription" destination="9dl-sd-B5V" id="rnT-6f-p2C"/>
                 <outlet property="itemImageView" destination="YKJ-qQ-SWL" id="aR4-2b-HLj"/>
                 <outlet property="itemPhotographer" destination="Qh9-20-HmL" id="fua-ew-WYW"/>
