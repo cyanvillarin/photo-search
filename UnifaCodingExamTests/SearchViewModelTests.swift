@@ -133,6 +133,23 @@ class SearchViewModelTests: XCTestCase {
       XCTAssertRecordedElements(currentPageNumber.events, [1, 2, 1, 2])
    }
    
+   func test_fetchMorePhotosIfNeeded_WithNilPrevPageOrNextPage() async {
+      
+      /// reinstantiate viewModel to have the shouldReturnZero to true
+      mockApiService.shouldReturnZeroPhotos = true
+      viewModel = SearchViewModel(apiService: mockApiService)
+      
+      /// simulate the fetching photos but with zero results
+      await viewModel.fetchPhotos(queryKeyword: "test")
+      
+      await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
+      XCTAssertEqual(viewModel.nextPageURL, nil)
+      
+      await viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
+      XCTAssertEqual(viewModel.prevPageURL, nil)
+      
+   }
+   
    func test_resetVariables() {
       
       let testError = CustomError.failedToGetUrl
