@@ -100,16 +100,24 @@ class SearchViewModelTests: XCTestCase {
    
    func test_fetchMorePhotosIfNeeded() async {
 
-      /// need to call fetchPhotos first, to set the nextPage and prevPage variables
+      /// create testSchedulers
+      let photos = testScheduler.createObserver([Photo].self)
+      let shouldShowLoadingView = testScheduler.createObserver(Bool.self)
+      let currentPageNumber = testScheduler.createObserver(Int.self)
+      
+      /// bind
+      viewModel.photos.bind(to: photos).disposed(by: disposeBag)
+      viewModel.shouldShowLoadingView.bind(to: shouldShowLoadingView).disposed(by: disposeBag)
+      viewModel.currentPageNumber.bind(to: currentPageNumber).disposed(by: disposeBag)
+      
+      /// need to call fetchPhotos first, to set the nextPage and prevPage variables (to be used on fetchMorePhotosIfNeeded)
       await viewModel.fetchPhotos(queryKeyword: "anything_here")
       
       /// check if pageNumber increases by 1 if paginationType is .next
-      viewModel.pageNumber = 1
       await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
       XCTAssertEqual(viewModel.pageNumber, 2)
       
       /// check if pageNumber increases by 1 if paginationType is .prev
-      viewModel.pageNumber = 2
       await viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
       XCTAssertEqual(viewModel.pageNumber, 1)
       
@@ -117,11 +125,35 @@ class SearchViewModelTests: XCTestCase {
       await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
       XCTAssertEqual(viewModel.nextPageURL, "expected_next_page_URL")
       XCTAssertEqual(viewModel.prevPageURL, "expected_prev_page_URL")
+      
+      /// check if Observables are updated with the latest value fetched from viewModel.fetchPhotos
+      let mockPhotos = mockApiService.mockResponse.photos
+      XCTAssertRecordedElements(photos.events, [mockPhotos, mockPhotos, mockPhotos, mockPhotos])
+      XCTAssertRecordedElements(shouldShowLoadingView.events, [true, false, true, false, true, false, true, false])
+      XCTAssertRecordedElements(currentPageNumber.events, [1, 2, 1, 2])
    }
    
    func test_resetVariables() {
+      
       let testError = CustomError.failedToGetUrl
+      
+      /// create testSchedulers
+      let photos = testScheduler.createObserver([Photo].self)
+      let shouldShowNoResultsView = testScheduler.createObserver(Bool.self)
+      let shouldShowLoadingView = testScheduler.createObserver(Bool.self)
+      
+      /// bind
+      viewModel.photos.bind(to: photos).disposed(by: disposeBag)
+      viewModel.shouldShowNoResultsView.bind(to: shouldShowNoResultsView).disposed(by: disposeBag)
+      viewModel.shouldShowLoadingView.bind(to: shouldShowLoadingView).disposed(by: disposeBag)
+      
+      /// resetVariables
       viewModel.resetVariables(error: testError)
+      
+      /// check if Observables are updated with the latest value fetched from viewModel.fetchPhotos
+      XCTAssertRecordedElements(photos.events, [[]])
+      XCTAssertRecordedElements(shouldShowLoadingView.events, [false])
+      XCTAssertRecordedElements(shouldShowNoResultsView.events, [true])
       XCTAssertEqual(viewModel.prevPageURL, nil)
       XCTAssertEqual(viewModel.nextPageURL, nil)
    }
