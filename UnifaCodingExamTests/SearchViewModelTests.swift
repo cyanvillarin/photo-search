@@ -75,6 +75,18 @@ class SearchViewModelTests: XCTestCase {
       XCTAssertEqual(viewModel.prevPageURL, "expected_prev_page_URL")
    }
    
+   func test_fetchPhotos_fail_case() async {
+      /// set the flag to true
+      mockApiService.shouldFailApiCall = true
+      
+      /// perform the simulation of fetching photos
+      await viewModel.fetchPhotos(queryKeyword: "fail")
+      
+      /// check if nextPageURL and prevPageURL are updated to nil when fetchPhotos
+      XCTAssertEqual(viewModel.nextPageURL, nil)
+      XCTAssertEqual(viewModel.prevPageURL, nil)
+   }
+   
    func test_fetchPhotosWithZeroResults() async {
       
       /// reinstantiate viewModel to have the shouldReturnZero to true
@@ -131,6 +143,21 @@ class SearchViewModelTests: XCTestCase {
       XCTAssertRecordedElements(photos.events, [mockPhotos, mockPhotos, mockPhotos, mockPhotos])
       XCTAssertRecordedElements(shouldShowLoadingView.events, [true, false, true, false, true, false, true, false])
       XCTAssertRecordedElements(currentPageNumber.events, [1, 2, 1, 2])
+   }
+   
+   func test_fetchMorePhotosIfNeeded_fail_case() async {
+      
+      /// reinstantiate viewModel to have the shouldReturnZero to true
+      mockApiService.shouldFailApiCall = true
+      viewModel = SearchViewModel(apiService: mockApiService)
+      
+      /// perform the simulation of fetching photos
+      await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
+      await viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
+      
+      /// check if nextPageURL and prevPageURL are updated to nil when fetchPhotos
+      XCTAssertEqual(viewModel.nextPageURL, nil)
+      XCTAssertEqual(viewModel.prevPageURL, nil)
    }
    
    func test_fetchMorePhotosIfNeeded_WithNilPrevPageOrNextPage() async {
