@@ -13,6 +13,15 @@ import Foundation
 /// Subclass of ApiService, and just overrides the fetchPhotos function
 class MockApiService: ApiService {
    
+   var shouldReturnZeroPhotos = false
+   
+   let mockResponseWithZeroPhotos = PhotosApiResponse(total_results: 0,
+                                                      page: 0,
+                                                      per_page: 0,
+                                                      photos: [],
+                                                      next_page: nil,
+                                                      prev_page: nil)
+   
    let mockResponse = PhotosApiResponse(total_results: 10000,
                                         page: 1,
                                         per_page: 30,
@@ -76,10 +85,17 @@ class MockApiService: ApiService {
                                         prev_page: "expected_prev_page_URL")
    
    override func fetchPhotos(queryKeyword: String) async throws -> PhotosApiResponse {
+      if shouldReturnZeroPhotos {
+         return mockResponseWithZeroPhotos
+      }
       return mockResponse
    }
    
    override func fetchNextOrPrevPhotos(paginationURL: String) async throws -> PhotosApiResponse {
+      if shouldReturnZeroPhotos {
+         return mockResponseWithZeroPhotos
+      }
       return mockResponse
    }
+   
 }

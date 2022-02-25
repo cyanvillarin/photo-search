@@ -75,6 +75,29 @@ class SearchViewModelTests: XCTestCase {
       XCTAssertEqual(viewModel.prevPageURL, "expected_prev_page_URL")
    }
    
+   func test_fetchPhotosWithZeroResults() async {
+      
+      /// reinstantiate viewModel to have the shouldReturnZero to true
+      mockApiService.shouldReturnZeroPhotos = true
+      viewModel = SearchViewModel(apiService: mockApiService)
+      
+      /// create testSchedulers
+      let photos = testScheduler.createObserver([Photo].self)
+      let shouldShowNoResultsView = testScheduler.createObserver(Bool.self)
+      let shouldShowLoadingView = testScheduler.createObserver(Bool.self)
+      let currentPageNumber = testScheduler.createObserver(Int.self)
+      
+      /// bind
+      viewModel.photos.bind(to: photos).disposed(by: disposeBag)
+      viewModel.shouldShowNoResultsView.bind(to: shouldShowNoResultsView).disposed(by: disposeBag)
+      viewModel.shouldShowLoadingView.bind(to: shouldShowLoadingView).disposed(by: disposeBag)
+      viewModel.currentPageNumber.bind(to: currentPageNumber).disposed(by: disposeBag)
+      
+      /// simulate the fetching photos but with zero results
+      await viewModel.fetchPhotos(queryKeyword: "test")
+      XCTAssertRecordedElements(photos.events, [[]])
+   }
+   
    func test_fetchMorePhotosIfNeeded() async {
 
       /// need to call fetchPhotos first, to set the nextPage and prevPage variables
