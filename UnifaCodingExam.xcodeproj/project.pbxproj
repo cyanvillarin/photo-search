@@ -36,6 +36,9 @@
 		87767A4327C6055F00C6EDFA /* CustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4227C6055F00C6EDFA /* CustomErrors.swift */; };
 		87767A4627C60BEA00C6EDFA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4527C60BEA00C6EDFA /* LoadingView.swift */; };
 		87767A4827C60C2C00C6EDFA /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87767A4727C60C2C00C6EDFA /* UIApplicationExtensions.swift */; };
+		8783586427C9DF5B00CA15C5 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783586327C9DF5B00CA15C5 /* DetailViewControllerTests.swift */; };
+		8783586627C9E1AA00CA15C5 /* SourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783586527C9E1AA00CA15C5 /* SourceTests.swift */; };
+		8783586827C9E1B800CA15C5 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8783586727C9E1B800CA15C5 /* PhotoTests.swift */; };
 		E29ADB1183316C3BF26EA38D /* Pods_UnifaCodingExamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F628940206E7F4529003BF /* Pods_UnifaCodingExamTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +98,9 @@
 		87767A4227C6055F00C6EDFA /* CustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrors.swift; sourceTree = "<group>"; };
 		87767A4527C60BEA00C6EDFA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		87767A4727C60C2C00C6EDFA /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		8783586327C9DF5B00CA15C5 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
+		8783586527C9E1AA00CA15C5 /* SourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTests.swift; sourceTree = "<group>"; };
+		8783586727C9E1B800CA15C5 /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 		A3B7ECCBFD31B60D59777061 /* Pods-UnifaCodingExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam.debug.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam/Pods-UnifaCodingExam.debug.xcconfig"; sourceTree = "<group>"; };
 		AC98F0EA0F255C451D273B76 /* Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; path = "Target Support Files/Pods-UnifaCodingExam-UnifaCodingExamUITests/Pods-UnifaCodingExam-UnifaCodingExamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -251,7 +257,10 @@
 				877675C727C4B1AE00011859 /* SearchViewModelTests.swift */,
 				87520AF827C7DFBD000C0752 /* SearchTableViewCellViewModelTests.swift */,
 				87520AF427C7D7C3000C0752 /* SearchViewControllerTests.swift */,
+				8783586327C9DF5B00CA15C5 /* DetailViewControllerTests.swift */,
 				87520AF027C7D087000C0752 /* SearchTableViewCellTests.swift */,
+				8783586527C9E1AA00CA15C5 /* SourceTests.swift */,
+				8783586727C9E1B800CA15C5 /* PhotoTests.swift */,
 			);
 			path = UnifaCodingExamTests;
 			sourceTree = "<group>";
@@ -574,11 +583,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8783586827C9E1B800CA15C5 /* PhotoTests.swift in Sources */,
 				87520AF927C7DFBD000C0752 /* SearchTableViewCellViewModelTests.swift in Sources */,
 				87520AF327C7D0EF000C0752 /* MockApiService.swift in Sources */,
 				877675C827C4B1AE00011859 /* SearchViewModelTests.swift in Sources */,
 				87520AF527C7D7C3000C0752 /* SearchViewControllerTests.swift in Sources */,
 				87520AF127C7D087000C0752 /* SearchTableViewCellTests.swift in Sources */,
+				8783586427C9DF5B00CA15C5 /* DetailViewControllerTests.swift in Sources */,
+				8783586627C9E1AA00CA15C5 /* SourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

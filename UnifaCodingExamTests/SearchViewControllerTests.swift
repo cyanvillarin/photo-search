@@ -25,8 +25,11 @@ class SearchViewControllerTests: XCTestCase {
       super.tearDown()
    }
    
-   func testHasATableView() {
+   func testHasTheRequiredViews() {
       XCTAssertNotNil(sut.tableView)
+      XCTAssertNotNil(sut.searchBar)
+      XCTAssertNotNil(sut.currentPageLabel)
+      XCTAssertNotNil(sut.noResultsFoundView)
    }
    
    func testTableViewHasDelegate() {

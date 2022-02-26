@@ -151,13 +151,16 @@ class SearchViewModelTests: XCTestCase {
       mockApiService.shouldFailApiCall = true
       viewModel = SearchViewModel(apiService: mockApiService)
       
+      /// need to set so that it will proceed until apiService.fetchNextOrPrevPhotos
+      viewModel.nextPageURL = "testURL"
+      
       /// perform the simulation of fetching photos
       await viewModel.fetchMorePhotosIfNeeded(paginationType: .next)
-      await viewModel.fetchMorePhotosIfNeeded(paginationType: .prev)
-      
+         
       /// check if nextPageURL and prevPageURL are updated to nil when fetchPhotos
       XCTAssertEqual(viewModel.nextPageURL, nil)
       XCTAssertEqual(viewModel.prevPageURL, nil)
+            
    }
    
    func test_fetchMorePhotosIfNeeded_WithNilPrevPageOrNextPage() async {

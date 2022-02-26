@@ -31,10 +31,6 @@ class SearchTableViewCellTests: XCTestCase {
    }
    
    func test_setUp() {
-            
-      guard let firstPhoto = mockApiService.mockResponse.photos.first else {
-         return
-      }
       
    }
 
