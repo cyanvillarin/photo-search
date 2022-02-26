@@ -2,6 +2,8 @@
 
 This is the coding exam for my job application at UniFa.
 
+NOTE: In case the API doesn't work, the reason could be that the API request limit has been reached. The limit is 200 requests per hour and 20,000 requests per month. If that happens, please contact me and I will update the API key. Thank you for understanding.
+
 ## Frameworks Used
 1. RxSwift - for Data Binding View and ViewModel
 2. RxCocoa - for integrating TableView with RxSwift
