@@ -10,7 +10,7 @@ import XCTest
 @testable import UnifaCodingExam
 
 class SearchTableViewCellTests: XCTestCase {
-
+   
    var searchViewController: SearchViewController!
    var searchTableViewCell: SearchTableViewCell! /// system under test
    var mockApiService = MockApiService()
@@ -24,14 +24,15 @@ class SearchTableViewCellTests: XCTestCase {
       self.searchViewController.loadView()
       self.searchViewController.viewModel = SearchViewModel(apiService: mockApiService)
       self.searchViewController.viewDidLoad()
+      
+      let itemXib = UINib.init(nibName: "SearchTableViewCell", bundle: nil)
+      searchViewController.tableView.register(itemXib,
+                         forCellReuseIdentifier: "SearchTableViewCell")
    }
    
    override func tearDown() {
       super.tearDown()
    }
    
-   func test_setUp() {
-      
-   }
-
 }
+
