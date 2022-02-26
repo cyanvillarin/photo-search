@@ -115,7 +115,7 @@
                             <constraint firstItem="Sac-JS-ald" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z0C-VB-06r"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ルックミー検索" id="MDB-8m-Y4b"/>
+                    <navigationItem key="navigationItem" id="MDB-8m-Y4b"/>
                     <connections>
                         <outlet property="currentPageLabel" destination="GA7-j8-cSM" id="hzA-4I-K40"/>
                         <outlet property="noResultsFoundView" destination="mV3-zv-PCU" id="qQJ-ji-Eac"/>
