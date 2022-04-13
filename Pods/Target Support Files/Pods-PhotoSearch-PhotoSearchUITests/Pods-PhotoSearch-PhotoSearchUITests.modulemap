@@ -1,0 +1,6 @@
+framework module Pods_PhotoSearch_PhotoSearchUITests {
+  umbrella header "Pods-PhotoSearch-PhotoSearchUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
