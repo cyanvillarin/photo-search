@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import AppTrackingTransparency
+import AdSupport
 
 class SearchViewController: UIViewController {
    
@@ -26,6 +28,14 @@ class SearchViewController: UIViewController {
    // MARK: - Life Cycle Methods
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+         if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+               // Tracking authorization completed. Start loading ads here.
+            })
+         }
+      }
       
       /// Setup UI
       setupNavigationBar()
