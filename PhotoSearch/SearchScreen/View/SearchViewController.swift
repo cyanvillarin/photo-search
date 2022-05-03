@@ -10,8 +10,11 @@ import RxSwift
 import RxCocoa
 import AppTrackingTransparency
 import AdSupport
+import GoogleMobileAds
 
 class SearchViewController: UIViewController {
+   
+   private var interstitial: GADInterstitialAd?
    
    // MARK: - Variables
    @IBOutlet var searchBar: UISearchBar!
@@ -32,8 +35,34 @@ class SearchViewController: UIViewController {
       DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
          if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
-               // Tracking authorization completed. Start loading ads here.
+               /// Initialize the Google Mobile Ads SDK.
+               GADMobileAds.sharedInstance().start(completionHandler: { _ in
+               
+                  let isAdRequested = UserDefaults.standard.value(forKey: "isAdRequested") as! Bool
+                  if !isAdRequested {
+                     let request = GADRequest()
+                     GADInterstitialAd.load(withAdUnitID: "ca-app-pub-8855918227783661/1251788136", request: request, completionHandler: { [self] ad, error in
+                        if let error = error {
+                           print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                           return
+                        }
+                        
+                        UserDefaults.standard.set(true, forKey: "isAdRequested")
+                        interstitial = ad
+                     })
+                  } else {
+                     print("Ad was requested already")
+                  }
+               
+               })
+               GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["90ff99b01dbecf0e7f27515d1b4cd5b6"]
+               
             })
+         } else {
+            // Fallback on earlier versions
+            /// Initialize the Google Mobile Ads SDK.
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
+            GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["90ff99b01dbecf0e7f27515d1b4cd5b6"]
          }
       }
       
@@ -51,6 +80,26 @@ class SearchViewController: UIViewController {
       Task.init {
          await viewModel.fetchPhotos(queryKeyword: "Kindergarten")
       }
+   }
+   
+   override func viewWillAppear(_ animated: Bool) {
+      
+      super.viewWillAppear(animated)
+      
+      let isAdShown = UserDefaults.standard.value(forKey: "isAdShown") as! Bool
+      if !isAdShown {
+         if self.interstitial != nil {
+            DispatchQueue.main.async {
+               self.interstitial?.present(fromRootViewController: self)
+               UserDefaults.standard.set(true, forKey: "isAdShown")
+            }
+         } else {
+            print("Ad wasn't ready")
+         }
+      } else {
+         print("Ad was shown already")
+      }
+      
    }
    
    // MARK: - Private Methods

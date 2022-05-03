@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       // Override point for customization after application launch.
+      
+      // Set the flags to false since the app has just started
+      UserDefaults.standard.set(false, forKey: "isAdRequested")
+      UserDefaults.standard.set(false, forKey: "isAdShown")
+      
       return true
    }
 

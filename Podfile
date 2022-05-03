@@ -10,6 +10,7 @@ target 'PhotoSearch' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'NVActivityIndicatorView'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'PhotoSearchTests' do
     inherit! :search_paths
