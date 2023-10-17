@@ -1,6 +1,6 @@
-# UnifaCodingExam
+# PhotoSearch iOS App
 
-This is the coding exam for my job application at UniFa.
+![image](https://github.com/cyanvillarin/photo-search/assets/10018971/9a433882-69fe-4693-8b06-bf507693ce9e)
 
 NOTE: In case the API doesn't work, the reason could be that the API request limit has been reached. The limit is 200 requests per hour and 20,000 requests per month. If that happens, please contact me and I will update the API key. Thank you for understanding.
 
